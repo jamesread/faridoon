@@ -1,7 +1,7 @@
 	</div>
 
 	<div id = "footer">
-		&#169; xconspirisist 
+		Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a>.
 	</div>
 
 	<script type = "text/javascript">
