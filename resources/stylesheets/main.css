@@ -116,3 +116,13 @@ fieldset {
 fieldset:nth-child(odd) {
 	background-color: #efefef;
 }
+
+div.pagination {
+	text-align: center;
+	padding: 1em;
+}
+
+span.currentPage {
+	font-weight: bold;
+	padding: 1em;
+}

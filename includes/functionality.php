@@ -118,4 +118,27 @@ function isAdmin() {
 	}
 }
 
+function pagingLinks($start, $page, $numPages) {
+	echo '<div class = "pagination">';
+	if ($start > 0) { 
+		echo '<a href = "list.php?page=' . ($page - 1) . '">&laquo; prev</a> ';
+	} else {
+		echo '&laquo; prev';
+	}
+
+	echo ' <span class = "currentPage">' . ($page + 1) . '/' . ($numPages + 1) . '</span> ';
+
+	if ($page < $numPages) {
+		echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
+	} else {
+		echo 'next &raquo;';
+	}
+	echo '</div>';
+}
+
+function randomLink() {
+	echo '<div class = "pagination"><a href = "list.php?order=random">more randomn quotes...</a></div>';
+}
+
+
 ?>
