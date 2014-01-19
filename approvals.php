@@ -18,7 +18,7 @@ if (!empty($approveId)) {
 	echo '<p class = "good">Approved. You probably just made somebody very happy.</p>';
 }
 
-$sql = 'SELECT id, content, approval FROM quotes WHERE approval = 0';
+$sql = 'SELECT id, content, approval, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $quotes = $stmt->fetchAll();

@@ -126,3 +126,7 @@ span.currentPage {
 	font-weight: bold;
 	padding: 1em;
 }
+
+span.subtle, h1 span.subtle a {
+	color: gray;
+}

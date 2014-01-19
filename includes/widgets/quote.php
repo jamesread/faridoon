@@ -10,7 +10,7 @@
 
 
 echo '<div class = "quoteContainer">';
-	echo '<strong><a href = "show.php?action=show&amp;id=' . $quote['id'] . '">#' . $quote['id'] . '</a></strong>';
+	echo '<strong><a href = "show.php?action=show&amp;id=' . $quote['id'] . '">#' . $quote['id'] . '</a></strong> - <span class = "subtle">' . $quote['created'] .'</span>';
 	
 	if (isAdmin()) {
 		echo ' <small>[</small>';

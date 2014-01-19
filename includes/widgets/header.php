@@ -11,7 +11,7 @@ DT;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Faridoon</title>
+	<title><?= SITE_TITLE ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/main.css" />
 	<link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/jquery.snippet.min.css" />
@@ -22,8 +22,7 @@ DT;
 
 <body>
 	<div id = "header">
-		<h1>Faridoon</h1>
-
+		<h1><?= SITE_TITLE ?> <span class = "subtle"> - Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a></span></h1>
 		<ul class = "navigation">
 			<li class = "right"><a href = "add.php">Add</a></li>
 			<li><a href = "list.php?order=latest">Latest</a></li>

@@ -13,12 +13,12 @@ $navigable = true;
 
 switch ($order) {
 case 'random':
-	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY rand() LIMIT ' . $start . ', ' . $limit;
+	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, date_format(created, "%Y-%m-%d") AS created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY rand() LIMIT ' . $start . ', ' . $limit;
 	$navigable = false;
 	break;
 case 'latest':
 default:
-	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY id DESC LIMIT ' . $start . ', ' . $limit;
+	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, date_format(created, "%Y-%m-%d") AS created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY id DESC LIMIT ' . $start . ', ' . $limit;
 }
 
 $stmt = $db->prepare($sql);
