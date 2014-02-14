@@ -43,7 +43,7 @@ function findUsernames(array $quoteContent) {
 	$usernameColors = array();
 
 	foreach ($quoteContent as &$line) {
-		$regex = '#^[\(\)\:\d ]*<?([\w ]+)[:>] (.*)#i';
+		$regex = '#^[\]\[\(\)\:\d ]*<?[&+@~]{0,1}([\w ]+)[:>] (.*)#i';
 
 		preg_match($regex, $line['content'], $matches);
 
