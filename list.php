@@ -17,7 +17,7 @@ case 'random':
 	$order = 'rand()';
 	break;
 case 'rank':
-	$order = 'voteCount'; 
+	$order = 'voteCount DESC, created'; 
 	break;
 case 'latest':
 default:
