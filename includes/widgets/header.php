@@ -2,6 +2,8 @@
 
 require_once 'includes/common.php';
 
+use \libAllure\Session;
+
 echo <<<DT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -18,6 +20,7 @@ DT;
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type = "text/javascript"></script>
 	<script src="resources/javascript/jquery.snippet.min.js" type = "text/javascript"></script>
+	<script src="resources/javascript/main.js" type = "text/javascript"></script>
 </head>
 
 <body>
@@ -27,20 +30,26 @@ DT;
 			<li class = "right"><a href = "add.php">Add</a></li>
 			<li><a href = "list.php?order=latest">Latest</a></li>
 			<li><a href = "list.php?order=random">Random</a></li>
-			<?php if (isAdmin()) { 
+			<li><a href = "list.php?order=rank">Higest voted</a></li>
+			<?php 
+			
+			if (Session::isLoggedIn()) { 		
+				echo '<li class = "right">' . Session::getUser()->getUsername() . '</li>';
 
-			$sql = 'SELECT count(q.id) countNew FROM quotes q WHERE q.approval = 0';
-			$stmt = $db->prepare($sql);
-			$stmt->execute();
-			$countNew = $stmt->fetch();
-			$countNew = $countNew['countNew'];
-			$countNew = intval($countNew);
+				if (isAdmin()) {
+					$sql = 'SELECT count(q.id) countNew FROM quotes q WHERE q.approval = 0';
+					$stmt = $db->prepare($sql);
+					$stmt->execute();
+					$countNew = $stmt->fetch();
+					$countNew = $countNew['countNew'];
+					$countNew = intval($countNew);
 
-			if ($countNew == 0) {
-				echo '<li class = "right"><a href = "approvals.php">Approvals</a></li>';
-			} else {
-				echo '<li class = "right"><a href = "approvals.php">Approvals</a> (' . $countNew . ')</li>';
-			}
+					if ($countNew == 0) {
+						echo '<li class = "right"><a href = "approvals.php">Approvals</a></li>';
+					} else {
+						echo '<li class = "right"><a href = "approvals.php">Approvals</a> (' . $countNew . ')</li>';
+					}
+				}
 		
 			echo '<li class = "right"><a href = "logout.php">Logout</a></li>';
 			} else { 

@@ -9,7 +9,16 @@
 	}
 
 
-echo '<div class = "quoteContainer">';
+echo '<div class = "quoteContainer" id = "quote' . $quote['id'] . '">';
+	echo '<div class = "voteContainer">';
+	echo '<span class = "voteCount">' . $quote['voteCount'] . '</span>';
+	echo '<div class = "voteButtons">';
+	echo '<a onclick = "voteUp(' . $quote['id'] . ');" class = "up">&#9650;</a>';
+	echo '<a onclick = "voteDown(' . $quote['id'] . ')" class = "down">&#9660;</a>';
+	echo '</div>';
+	echo '</div>';
+
+	echo '<div class = "textContainer">';
 	echo '<strong><a href = "show.php?action=show&amp;id=' . $quote['id'] . '">#' . $quote['id'] . '</a></strong> - <span class = "subtle">' . $quote['created'] .'</span>';
 	
 	if (isAdmin()) {
@@ -44,6 +53,7 @@ echo '<div class = "quoteContainer">';
 			}
 		echo '</p>';
 	}
+	echo '</div>';
 
 echo '</div>';
 ?>

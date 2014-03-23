@@ -13,13 +13,18 @@ $navigable = true;
 
 switch ($order) {
 case 'random':
-	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, date_format(created, "%Y-%m-%d") AS created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY rand() LIMIT ' . $start . ', ' . $limit;
 	$navigable = false;
+	$order = 'rand()';
+	break;
+case 'rank':
+	$order = 'voteCount'; 
 	break;
 case 'latest':
 default:
-	$sql = 'SELECT SQL_CALC_FOUND_ROWS id, content, date_format(created, "%Y-%m-%d") AS created, syntaxHighlighting FROM quotes WHERE approval = 1 ORDER BY id DESC LIMIT ' . $start . ', ' . $limit;
+	$order = 'q.created';
 }
+
+$sql = 'SELECT SQL_CALC_FOUND_ROWS q.id, q.content, date_format(q.created, "%Y-%m-%d") AS created, q.syntaxHighlighting, SUM(v.delta) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE approval = 1 GROUP BY q.id ORDER BY ' . $order . ' DESC LIMIT ' . $start . ', ' . $limit;
 
 $stmt = $db->prepare($sql);
 $stmt->bindValue(':start', $start);

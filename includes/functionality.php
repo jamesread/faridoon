@@ -1,5 +1,7 @@
 <?php
 
+use \libAllure\Session;
+
 $usernameColors = array();
 $colors = array(
 	'#CC0066', '#3399FF', 'green', 'orange'
@@ -111,11 +113,13 @@ function filter($name, $type = FILTER_DEFAULT) {
 }
 
 function isAdmin() {
-	if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
-		return true;
-	} else {
-		return false;
+	if (Session::isLoggedIn()) {
+		if (Session::getUser()->getData('admin')) {
+			return true;
+		}
 	}
+
+	return false;
 }
 
 function pagingLinks($start, $page, $numPages) {

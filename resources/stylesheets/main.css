@@ -73,7 +73,6 @@ button {
 }
 
 #content, #footer {
-	width: 90%;
 	margin: auto;
 }
 
@@ -129,4 +128,67 @@ span.currentPage {
 
 span.subtle, h1 span.subtle a {
 	color: gray;
+}
+
+div.container {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	text-align: center;
+}
+
+div.quoteContainer {
+}
+
+div.voteContainer {
+	display: inline-block;
+	margin-right: 1em;
+	vertical-align: top;
+	width: 75px;
+	text-align: right;
+}
+
+div.voteContainer a {
+	display: block;
+	color: lightgray;
+	cursor: pointer;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
+div.voteContainer a:hover {
+	color: gray;
+}
+
+div.textContainer {
+	display: inline-block;
+	width: 90%;
+}
+
+span.voteCount {
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.2em;
+	padding-right: 1em;
+	text-align: right;
+}
+
+div.voteButtons {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+p.error {
+	background-color: salmon;
+	border: 2px solid red;
+	position: fixed;
+	left: 2.5%;
+	top: 12.5%;
+	padding: .4em;
+	cursor: pointer;
+}
+
+p.error:hover {
+	border-color: black;
 }
