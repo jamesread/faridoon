@@ -74,6 +74,7 @@ button {
 
 #content, #footer {
 	margin: auto;
+	width: 90%;
 }
 
 textarea {
@@ -191,4 +192,12 @@ p.error {
 
 p.error:hover {
 	border-color: black;
+}
+
+#formLogin fieldset {
+	background-color: #fff !important;
+}
+
+button {
+	font-family: sans-serif;
 }
