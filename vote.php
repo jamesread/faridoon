@@ -28,7 +28,26 @@ try {
 		$cause = "needsLogin";
 		throw new Exception("You need to be logged in.");
 	} else {
-		$sql = 'INSERT INTO votes (quote, user, delta) VALUES (:quote, :user, :delta1) ON DUPLICATE KEY UPDATE delta = :delta2 ';
+		$sql = 'SELECT v.delta FROM votes v WHERE v.quote = :quote AND v.user = :user LIMIT 1';
+		$stmt = DatabaseFactory::getInstance()->prepare($sql);
+		$stmt->bindValue('quote', $id);
+		$stmt->bindValue('user', Session::getUser()->getId());
+		$stmt->execute();
+
+		if ($stmt->numRows() > 0) {
+			$currentVote = $stmt->fetchRow();
+			$currentVote['delta'] = intval($currentVote['delta']);
+
+			$delta = $currentVote['delta'] + $delta;
+
+			if ($delta > 1) {
+				$delta = 1;
+			} else if ($delta < -1) {
+				$delta = -1;
+			}
+		}
+
+		$sql = 'INSERT INTO votes (quote, user, delta) VALUES (:quote, :user, :delta1) ON DUPLICATE KEY UPDATE delta = :delta2';
 		$stmt = DatabaseFactory::getInstance()->prepare($sql);
 		$stmt->bindValue('quote', $id);
 		$stmt->bindValue('user', Session::getUser()->getId());
