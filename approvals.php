@@ -2,7 +2,7 @@
 
 require_once 'includes/widgets/header.php';
 
-if (empty($_SESSION['admin'])) {
+if (!isAdmin()) {
 	echo '<p class = "bad">You are no admin that I know of. Go away.</p>';
 	require_once 'includes/widgets/footer.php';
 }
@@ -18,7 +18,7 @@ if (!empty($approveId)) {
 	echo '<p class = "good">Approved. You probably just made somebody very happy.</p>';
 }
 
-$sql = 'SELECT id, content, approval, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
+$sql = 'SELECT id, "?" as voteCount, content, approval, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $quotes = $stmt->fetchAll();

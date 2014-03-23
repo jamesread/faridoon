@@ -26,36 +26,41 @@ DT;
 <body>
 	<div id = "header">
 		<h1><?= SITE_TITLE ?> <span class = "subtle"> - Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a></span></h1>
-		<ul class = "navigation">
-			<li class = "right"><a href = "add.php">Add</a></li>
-			<li><a href = "list.php?order=latest">Latest</a></li>
-			<li><a href = "list.php?order=random">Random</a></li>
-			<li><a href = "list.php?order=rank">Higest voted</a></li>
-			<?php 
-			
-			if (Session::isLoggedIn()) { 		
-				echo '<li class = "right">' . Session::getUser()->getUsername() . '</li>';
+		<div class = "navbar">
+			<ul class = "navigation left">
+				<li><a href = "list.php?order=latest">Latest</a></li>
+				<li><a href = "list.php?order=random">Random</a></li>
+				<li><a href = "list.php?order=rank">Higest voted</a></li>
+			</ul>
+			<ul class = "navigation right">
+				<?php 
+				
+				if (Session::isLoggedIn()) { 		
+					echo '<li>Logged in as <strong>' . Session::getUser()->getUsername() . '</strong></li>';
+					echo '<li><a href = "logout.php">Logout</a></li>';
 
-				if (isAdmin()) {
-					$sql = 'SELECT count(q.id) countNew FROM quotes q WHERE q.approval = 0';
-					$stmt = $db->prepare($sql);
-					$stmt->execute();
-					$countNew = $stmt->fetch();
-					$countNew = $countNew['countNew'];
-					$countNew = intval($countNew);
+					if (isAdmin()) {
+						$sql = 'SELECT count(q.id) countNew FROM quotes q WHERE q.approval = 0';
+						$stmt = $db->prepare($sql);
+						$stmt->execute();
+						$countNew = $stmt->fetch();
+						$countNew = $countNew['countNew'];
+						$countNew = intval($countNew);
 
-					if ($countNew == 0) {
-						echo '<li class = "right"><a href = "approvals.php">Approvals</a></li>';
-					} else {
-						echo '<li class = "right"><a href = "approvals.php">Approvals</a> (' . $countNew . ')</li>';
+						if ($countNew == 0) {
+							echo '<li><a href = "approvals.php">Approvals</a></li>';
+						} else {
+							echo '<li><a href = "approvals.php">Approvals</a> (' . $countNew . ')</li>';
+						}
 					}
-				}
-		
-			echo '<li class = "right"><a href = "logout.php">Logout</a></li>';
-			} else { 
-			echo '<li class = "right"><a href = "login.php">Login</a></li>';
-			} ?>
-		</ul>
+			
+				} else { 
+					echo '<li><a href = "login.php">Login</a></li>';
+				} ?>
+
+				<li class = "right"><a href = "add.php">Add</a></li>
+			</ul>
+		</div>
 	</div>
 <?php if (strpos($_SERVER['PHP_SELF'], 'faridoon') !== FALSE) { ?>
 	<p style = "padding: 1em; width: 90%; margin: auto; margin-bottom: 2em; background-color: beige; border-radius: 1em;">This site is also accessible from <a href = "http://tydus.net/quotes">http://www.tydus.net/quotes</a>.</p>

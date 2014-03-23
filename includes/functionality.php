@@ -114,7 +114,9 @@ function filter($name, $type = FILTER_DEFAULT) {
 
 function isAdmin() {
 	if (Session::isLoggedIn()) {
-		if (Session::getUser()->getData('admin')) {
+		$admin = Session::getUser()->getData('admin');
+
+		if ($admin) {
 			return true;
 		}
 	}
