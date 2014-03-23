@@ -24,7 +24,7 @@ default:
 	$order = 'q.created';
 }
 
-$sql = 'SELECT SQL_CALC_FOUND_ROWS q.id, q.content, date_format(q.created, "%Y-%m-%d") AS created, q.syntaxHighlighting, SUM(v.delta) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE approval = 1 GROUP BY q.id ORDER BY ' . $order . ' DESC LIMIT ' . $start . ', ' . $limit;
+$sql = 'SELECT SQL_CALC_FOUND_ROWS q.id, q.content, date_format(q.created, "%Y-%m-%d") AS created, q.syntaxHighlighting, COALESCE(SUM(v.delta), 0) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE approval = 1 GROUP BY q.id ORDER BY ' . $order . ' DESC LIMIT ' . $start . ', ' . $limit;
 
 $stmt = $db->prepare($sql);
 $stmt->bindValue(':start', $start);
