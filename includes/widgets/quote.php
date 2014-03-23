@@ -10,8 +10,10 @@
 
 
 echo '<div class = "quoteContainer" id = "quote' . $quote['id'] . '">';
+	$voteClass = ($quote['voteCount'] == 0) ? 'novotes' : '';
+
 	echo '<div class = "voteContainer">';
-	echo '<span class = "voteCount">' . $quote['voteCount'] . '</span>';
+	echo '<span class = "voteCount ' . $voteClass . '">' . $quote['voteCount'] . '</span>';
 	echo '<div class = "voteButtons">';
 	echo '<a onclick = "voteUp(' . $quote['id'] . ');" class = "up">&#9650;</a>';
 	echo '<a onclick = "voteDown(' . $quote['id'] . ')" class = "down">&#9660;</a>';

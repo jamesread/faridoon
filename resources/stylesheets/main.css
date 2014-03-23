@@ -176,6 +176,10 @@ div.textContainer {
 	width: 90%;
 }
 
+span.voteCount.novotes {
+	color: gray;
+}
+
 span.voteCount {
 	font-weight: bold;
 	display: inline-block;

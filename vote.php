@@ -61,7 +61,7 @@ try {
 		$stmt->execute();
 
 		$quote = $stmt->fetchRowNotNull();
-		$newVal = $quote['newVal'];
+		$newVal = intval($quote['newVal']);
 	}
 
 	outputJson(array(

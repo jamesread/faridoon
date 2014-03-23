@@ -41,9 +41,14 @@ function onVoteReply(json) {
 			onError(json);
 		}
 	} else {
-		var quote = $('#quote' + json.id);
+		voteCount = $('#quote' + json.id).find('.voteCount');
 
-		window.quote = quote;
-		quote.find('.voteCount').text(json.newVal);
+		if (json.newVal == 0) {
+			voteCount.addClass('novotes');
+		} else {
+			voteCount.removeClass('novotes');
+		}
+
+		voteCount.text(json.newVal);
 	}
 }
