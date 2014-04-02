@@ -30,6 +30,7 @@ class FormQuote extends Form {
 		$el->addOption('Javascript', 'javascript');
 		$el->addOption('PHP', 'php');
 		$el->addOption('Java', 'java');
+		$el->addOption('Python', 'python');
 		$el->setValue($quote['syntaxHighlighting']);
 		$this->addButtons(Form::BTN_SUBMIT);
 	}
