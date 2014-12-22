@@ -47,10 +47,15 @@ echo '<div class = "quoteContainer" id = "quote' . $quote['id'] . '">';
 	} else {
 		echo '<p class = "quote">';
 			foreach ($content as $line) {
+				if ($line['content'] == "\r") {
+					echo '<br /><br />'; 
+					continue;
+				}
+
 				if (empty($line['username'])) {
-					echo $line['content'] . '<br />';
+					echo '<span class = "line">' . $line['content'] . '</span>';
 				} else {
-					echo '<strong style = "color: ' . $line['usernameColor'] . '">' . $line['username'] . '</strong>: ' . $line['content'] . '<br />';
+					echo '<span class = "line withUsername"><strong style = "color: ' . $line['usernameColor'] . '">' . $line['username'] . '</strong>: ' . $line['content'] . '</span>';
 				}
 			}
 		echo '</p>';

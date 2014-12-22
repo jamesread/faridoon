@@ -99,8 +99,17 @@ label {
 
 p.quote, .snippet-wrap {
 	font-family: monospace;
-	margin-top: 0;
-	margin-bottom: 2.5em !important;
+	margin-top: .6em;
+	margin-bottom: 3.5em !important;
+}
+
+span.line {
+	display: block;
+	padding: .2em;
+}
+
+span.line:hover {
+	background-color: beige;
 }
 
 .good {
