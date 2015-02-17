@@ -4,7 +4,7 @@ require_once 'includes/common.php';
 require_once 'libAllure/util/FormLogin.php';
 require_once 'libAllure/AuthBackendOpenId.php';
 
-$openId = new AuthBackendOpenId('http://tydus.net/quotes/');
+$openId = new AuthBackendOpenId('http://tydus.net/');
 
 if (!$openId->getMode()) {
 	if (isset($_REQUEST['openId'])) {
