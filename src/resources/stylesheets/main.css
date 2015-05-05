@@ -25,16 +25,17 @@ div.navbar {
 	margin-bottom: 3em;
 	padding: 0;
 	border-radius: 0em 0em 1em 1em;
+	display: flex;
 }
 
 ul.navigation {
-	display: inline-block;
+	flex: 1 1 auto;
 	margin: 0;
 	padding: 0;
 }
 
 ul.navigation.right {
-	float: right;
+	text-align: right;
 }
 
 ul.admin {
@@ -49,7 +50,6 @@ ul.navigation li, ul.admin li {
 }
 
 li.right {
-	float: right;
 }
 
 a, a:visited {
@@ -158,14 +158,16 @@ div.container {
 }
 
 div.quoteContainer {
+	display: flex;
 }
 
 div.voteContainer {
-	display: inline-block;
+	flex: 0 1 auto;
 	margin-right: 1em;
 	vertical-align: top;
-	width: 75px;
-	text-align: right;
+	text-align: center;
+	min-width: 2em;
+	margin-top: 2em;
 }
 
 div.voteContainer a {
@@ -181,8 +183,7 @@ div.voteContainer a:hover {
 }
 
 div.textContainer {
-	display: inline-block;
-	width: 90%;
+	flex: 2 2  auto;
 }
 
 span.voteCount.novotes {
@@ -194,13 +195,7 @@ span.voteCount {
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 1.2em;
-	padding-right: 1em;
-	text-align: right;
-}
-
-div.voteButtons {
-	display: inline-block;
-	vertical-align: middle;
+	text-align: center;
 }
 
 p.error {
@@ -224,3 +219,38 @@ p.error:hover {
 button {
 	font-family: sans-serif;
 }
+
+@media screen and (max-width: 640px) {
+	#content, #footer, body {
+		width: auto;
+	}
+
+	h1 {
+		margin-top: 0;
+		border-radius: 0;
+	}
+
+	div.navbar {
+		width: auto;
+		margin: 0;
+		border-radius: 0;
+		border-bottom: 1px solid #999;
+	}
+
+	ul.navigation.right {
+		border-left: 1px dashed #999;
+	}
+
+	div.voteContainer {
+		text-align: center;
+		margin-right: 0.5em;
+	}
+
+	span.voteCount {
+		display: block;
+		padding: 0;
+		text-align: center;
+	}
+}
+
+

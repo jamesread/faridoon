@@ -13,11 +13,9 @@ echo '<div class = "quoteContainer" id = "quote' . $quote['id'] . '">';
 	$voteClass = ($quote['voteCount'] == 0) ? 'novotes' : '';
 
 	echo '<div class = "voteContainer">';
+	echo '<a class = "voteButton" onclick = "voteUp(' . $quote['id'] . ');" class = "up">&#9650;</a>';
 	echo '<span class = "voteCount ' . $voteClass . '">' . $quote['voteCount'] . '</span>';
-	echo '<div class = "voteButtons">';
-	echo '<a onclick = "voteUp(' . $quote['id'] . ');" class = "up">&#9650;</a>';
-	echo '<a onclick = "voteDown(' . $quote['id'] . ')" class = "down">&#9660;</a>';
-	echo '</div>';
+	echo '<a class = "voteButton" onclick = "voteDown(' . $quote['id'] . ')" class = "down">&#9660;</a>';
 	echo '</div>';
 
 	echo '<div class = "textContainer">';
