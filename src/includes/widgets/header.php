@@ -33,7 +33,7 @@ DT;
 			<ul class = "navigation left">
 				<li><a href = "list.php?order=latest">Latest</a></li>
 				<li><a href = "list.php?order=random">Random</a></li>
-				<li><a href = "list.php?order=rank">Higest voted</a></li>
+				<li><a href = "list.php?order=rank">Highest voted</a></li>
 			</ul>
 			<ul class = "navigation right">
 				<?php 
