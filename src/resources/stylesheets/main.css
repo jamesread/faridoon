@@ -55,10 +55,15 @@ li.right {
 a, a:visited {
 	color: blue;
 	text-decoration: none;
+	border: 1px solid;
 }
 
 a:hover {
 	text-decoration: underline;
+}
+
+a:focus {
+	border: 1px solid black;
 }
 
 #footer {

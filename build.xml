@@ -1,0 +1,17 @@
+<project default = "all" name = "faridoon">
+	<target name = "all" depends = "clean, dist" />
+
+	<target name = "clean">
+		<delete dir = "build" />
+	</target>
+
+	<target name = "dist">
+		<mkdir dir = "build" />
+
+		<zip destfile = "build/faridoon.zip">
+			<zipfileset dir = "src" prefix = "faridoon">
+				<exclude name = "includes/config.php" />
+			</zipfileset> 
+		</zip>
+	</target>
+</project>
