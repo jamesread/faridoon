@@ -14,6 +14,9 @@ DT;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title><?= SITE_TITLE ?></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/main.css" />
 	<link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/jquery.snippet.min.css" />
@@ -30,7 +33,7 @@ DT;
 			<ul class = "navigation left">
 				<li><a href = "list.php?order=latest">Latest</a></li>
 				<li><a href = "list.php?order=random">Random</a></li>
-				<li><a href = "list.php?order=rank">Higest voted</a></li>
+				<li><a href = "list.php?order=rank">Highest voted</a></li>
 			</ul>
 			<ul class = "navigation right">
 				<?php 
