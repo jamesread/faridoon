@@ -1,4 +1,9 @@
 <project default = "all" name = "faridoon">
+	<exec executable = "buildid">
+		<arg value = "-n" />	
+	</exec>
+	<loadproperties srcFile = ".buildid.ini" />
+
 	<target name = "all" depends = "clean, dist" />
 
 	<target name = "clean">
@@ -8,8 +13,8 @@
 	<target name = "dist">
 		<mkdir dir = "build" />
 
-		<zip destfile = "build/faridoon.zip">
-			<zipfileset dir = "src" prefix = "faridoon">
+		<zip destfile = "build/faridoon-${version.formatted.short}.zip">
+			<zipfileset dir = "src" prefix = "faridoon-${version.formatted.short}">
 				<exclude name = "includes/config.php" />
 			</zipfileset> 
 		</zip>
