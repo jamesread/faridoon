@@ -55,7 +55,7 @@ li.right {
 a, a:visited {
 	color: blue;
 	text-decoration: none;
-	border: 1px solid;
+	border: 1px solid transparent;
 }
 
 a:hover {
@@ -64,6 +64,8 @@ a:hover {
 
 a:focus {
 	border: 1px solid black;
+	background-color: white;
+	text-decoration: none;
 }
 
 #footer {
