@@ -2,7 +2,7 @@
 	<exec executable = "buildid">
 		<arg value = "-n" />	
 	</exec>
-	<loadproperties srcFile = ".buildid.ini" />
+	<loadproperties srcFile = ".buildid" />
 
 	<target name = "all" depends = "clean, dist" />
 
