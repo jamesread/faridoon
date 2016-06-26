@@ -1,6 +1,6 @@
 faridoon
 ========
 
-A really simple PHP based quotes system.
+A really simple PHP based quotes system. 
 
-This is insecure and probably has an absurd bug count. 
+You can see a live instance of it at http://tydus.net/quotes 
