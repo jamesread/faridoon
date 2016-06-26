@@ -7,7 +7,7 @@ require_once 'libAllure/AuthBackendOpenId.php';
 $openId = new AuthBackendOpenId('http://tydus.net/');
 
 if (!$openId->getMode()) {
-	if (isset($_REQUEST['openId'])) {
+	if (empty($_REQUEST['openId'])) {
 		$openId->login($_REQUEST['openId']);
 	}
 } elseif ($openId->getMode() == 'cancel') {
