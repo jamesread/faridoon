@@ -65,9 +65,6 @@ DT;
 			</ul>
 		</div>
 	</div>
-<?php if (strpos($_SERVER['PHP_SELF'], 'faridoon') !== FALSE) { ?>
-	<p style = "padding: 1em; width: 90%; margin: auto; margin-bottom: 2em; background-color: beige; border-radius: 1em;">This site is also accessible from <a href = "http://tydus.net/quotes">http://www.tydus.net/quotes</a>.</p>
-<?php } ?>
 	<div id = "content">
 <?php
 

@@ -1,0 +1,19 @@
+{
+    "name": "jamesread/faridoon",
+    "type": "project",
+    "require": {
+        "jwread/lib-allure": "^2",
+        "smarty/smarty": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jamesread\\Faridoon\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jamesread",
+            "email": "contact@jread.com"
+        }
+    ]
+}

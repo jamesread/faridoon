@@ -1,6 +1,7 @@
 <?php
 
 require_once 'includes/widgets/header.php';
+require_once 'includes/classes/model/Quote.php';
 
 if (!isAdmin()) {
     echo '<p class = "bad">You are no admin that I know of. Go away.</p>';
@@ -18,7 +19,7 @@ if (!empty($approveId)) {
     echo '<p class = "good">Approved. You probably just made somebody very happy.</p>';
 }
 
-$sql = 'SELECT id, "?" as voteCount, content, approval, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
+$sql = 'SELECT id, "?" as voteCount, content, approval as approved, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $quotes = $stmt->fetchAll();
@@ -28,7 +29,10 @@ if (count($quotes) == 0) {
 } else {
     echo '<p><strong>Ooh, there are items to approve.</strong></p>';
 
-    foreach ($quotes as $quote) {
+    foreach ($quotes as $dbquote) {
+        $quote = new Quote();
+        $quote->unmarshalFromDatabase($dbquote);
+
         include 'includes/widgets/quote.php';
     }
 }

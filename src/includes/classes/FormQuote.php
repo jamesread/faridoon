@@ -24,14 +24,14 @@ class FormQuote extends Form {
 		}
 
 		$this->addElement(new ElementTextbox('content', 'Content', stripslashes($content), 'Note: Usernames are automatically highlighted. Timestamps are automatically stripped.'));
-		$el = $this->addElement(new ElementSelect('syntaxHighlighting', 'Syntax highlighting for code?', $quote['syntaxHighlighting'], 'Is this quote mostly code? If so, it will have pretty formatting applied and usernames will not be highlighted.'));
+		$el = $this->addElement(new ElementSelect('syntaxHighlighting', 'Syntax highlighting for code?', false, 'Is this quote mostly code? If so, it will have pretty formatting applied and usernames will not be highlighted.'));
 		$el->addOption('Nope', '');
 		$el->addOption('C#', 'csharp');
 		$el->addOption('Javascript', 'javascript');
 		$el->addOption('PHP', 'php');
 		$el->addOption('Java', 'java');
 		$el->addOption('Python', 'python');
-		$el->setValue($quote['syntaxHighlighting']);
+		//$el->setValue($quote['syntaxHighlighting']);
 		$this->addButtons(Form::BTN_SUBMIT);
 	}
 

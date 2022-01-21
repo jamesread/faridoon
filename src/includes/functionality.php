@@ -21,58 +21,6 @@ function getCol($username) {
 	return $col;
 }
 
-function explodeQuote($quoteContent) {
-	$linesFixed = array();
-
-	foreach (explode("\n", $quoteContent) as $line) {
-		$lineX = array(
-			'content' => $line,
-			'username' => null,
-			'bgColor' => null,
-		);
-
-		$linesFixed[] = $lineX;
-	}
-
-	return $linesFixed;
-}
-
-function findUsernames(array $quoteContent) {
-	global $colors;
-	global $usernameColors;
-
-	reset($colors);
-	$usernameColors = array();
-
-	foreach ($quoteContent as &$line) {
-		$regex = '#^[\]\[\(\)\:\d ]*<?[&+@~]{0,1}([\w- ]+)[:>] (.*)#i';
-
-		preg_match($regex, $line['content'], $matches);
-
-		switch (count($matches)) {
-			case 3: 
-				$msg = str_replace('<br />', null, $matches[2]);
-				$msg = trim($msg);
-
-				if (empty($msg)) {
-					break;
-				}
-
-				$line['username'] = $matches[1];
-				$line['usernameColor'] = getCol($line['username']);
-				$line['content'] = htmlentities($matches[2]);
-
-				break;
-			default: 
-				break;
-		}
-
-	}
-
-	return $quoteContent;
-}
-
-
 /*
  * Flattening a multi-dimensional array into a
  * single-dimensional one. The resulting keys are a
@@ -114,7 +62,7 @@ function filter($name, $type = FILTER_DEFAULT) {
 
 function isAdmin() {
 	if (Session::isLoggedIn()) {
-		$admin = Session::getUser()->getData('admin');
+		$admin = Session::getUser()->hasPriv('ADMIN');
 
 		if ($admin) {
 			return true;
@@ -143,7 +91,6 @@ function pagingLinks($start, $page, $numPages) {
 }
 
 function randomLink() {
-	echo '<div class = "pagination"><a href = "list.php?order=random">more randomn quotes...</a></div>';
 }
 
 

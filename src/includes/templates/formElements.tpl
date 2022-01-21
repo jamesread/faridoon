@@ -1,8 +1,8 @@
 
 <div>
-{foreach from = "$elements" item = "element"}
+{foreach from = $elements item = "element"}
 	{if is_array($element)}
-		{include file = "formElements.tpl" elements="$element"}
+		{include file = "formElements.tpl" elements=$element}
 	{else}
 		{if $element->getType() eq 'ElementHidden'}
 			<input type = "hidden" name = "{$element->getName()}" value = "{$element->getValue()}" />

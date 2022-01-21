@@ -1,9 +1,8 @@
 <?php
 
 require_once 'includes/common.php';
-require_once 'libAllure/util/FormRegister.php';
 
-use \libAllure\FormRegister;
+use \libAllure\util\FormRegister;
 
 $f = new FormRegister();
 

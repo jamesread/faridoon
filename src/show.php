@@ -1,9 +1,10 @@
 <?php
 
 require_once 'includes/widgets/header.php';
+require_once 'includes/classes/model/Quote.php';
 
 $id = filter('id');
-$sql = 'SELECT q.id, q.content, q.created, q.syntaxHighlighting, COALESCE(SUM(v.delta), 0) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE q.id = :id ORDER BY q.id LIMIT 1';
+$sql = 'SELECT q.id, q.content, q.created, q.approval as approved, q.syntaxHighlighting, COALESCE(SUM(v.delta), 0) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE q.id = :id ORDER BY q.id LIMIT 1';
 $stmt = $db->prepare($sql);
 $stmt->bindValue(':id', $id);
 $stmt->execute();
@@ -11,7 +12,9 @@ $stmt->execute();
 if ($stmt->numRows() == 0) {
     echo '<p>That quote does not exist.</p>';
 } else {
-    $quote = $stmt->fetchRow();
+    $dbquote = $stmt->fetchRow();
+    $quote = new Quote();
+    $quote->unmarshalFromDatabase($dbquote);
 
     include_once 'includes/widgets/quote.php';
 
