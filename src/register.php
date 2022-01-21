@@ -8,13 +8,13 @@ use \libAllure\FormRegister;
 $f = new FormRegister();
 
 if ($f->validate()) {
-	$f->process();
+    $f->process();
 
-	header('Location: login.php');
+    header('Location: login.php');
 } else {
-	require_once 'includes/widgets/header.php';
-	$tpl->displayForm($f);
-	require_once 'includes/widgets/footer.php';
+    include_once 'includes/widgets/header.php';
+    $tpl->displayForm($f);
+    include_once 'includes/widgets/footer.php';
 }
 
 ?>

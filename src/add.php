@@ -6,15 +6,15 @@ require_once 'includes/classes/FormQuote.php';
 $f = new FormQuote();
 
 if ($f->validate()) {
-	$f->process();
+    $f->process();
 
-	echo '<p>Oh goodie. Another quote!</p>';
+    echo '<p>Oh goodie. Another quote!</p>';
 
-	if (!isAdmin()) {
-		echo '<p class = "good">Your quote needs approval before it shows up in the list.</p>';
-	}
+    if (!isAdmin()) {
+        echo '<p class = "good">Your quote needs approval before it shows up in the list.</p>';
+    }
 
-	require_once 'includes/widgets/footer.php';
+    include_once 'includes/widgets/footer.php';
 }
 
 $tpl->displayForm($f);

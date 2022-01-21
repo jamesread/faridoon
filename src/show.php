@@ -9,14 +9,14 @@ $stmt->bindValue(':id', $id);
 $stmt->execute();
 
 if ($stmt->numRows() == 0) {
-	echo '<p>That quote does not exist.</p>';
+    echo '<p>That quote does not exist.</p>';
 } else {
-	$quote = $stmt->fetchRow();
+    $quote = $stmt->fetchRow();
 
-	require_once 'includes/widgets/quote.php';
+    include_once 'includes/widgets/quote.php';
 
-	echo '<br /><br /><p>There are <a href = "list.php">many more quotes</a>, just in case this was not as exciting as you expected.</p>';
-}	
+    echo '<br /><br /><p>There are <a href = "list.php">many more quotes</a>, just in case this was not as exciting as you expected.</p>';
+}    
 
 require_once 'includes/widgets/footer.php';
 

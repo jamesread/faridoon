@@ -10,22 +10,22 @@ $stmt->execute();
 $quote = $stmt->fetch();
 
 if (empty($quote)) {
-	echo '<p>Oh dear, I cannot find that quote. Ah, for that matter, I dont think I can find my marbles!</p>';
+    echo '<p>Oh dear, I cannot find that quote. Ah, for that matter, I dont think I can find my marbles!</p>';
 
-	require_once 'includes/widgets/footer.php';
+    include_once 'includes/widgets/footer.php';
 } else {
-	$f = new FormQuote($quote);
+    $f = new FormQuote($quote);
 
-	if ($f->validate()) {
-		$f->process();
+    if ($f->validate()) {
+        $f->process();
 
-		echo '<h2>Quote edited.</h2>';
-		echo '<p><a href = "show.php?id=' . $f->getElementValue('id') . '">#' . $f->getElementValue('id'). '</a></p>';
+        echo '<h2>Quote edited.</h2>';
+        echo '<p><a href = "show.php?id=' . $f->getElementValue('id') . '">#' . $f->getElementValue('id'). '</a></p>';
 
-		require_once 'includes/widgets/footer.php';
-	}
+        include_once 'includes/widgets/footer.php';
+    }
 
-	$tpl->displayForm($f);
+    $tpl->displayForm($f);
 }
 
 require_once 'includes/widgets/footer.php';
