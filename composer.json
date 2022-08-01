@@ -1,6 +1,9 @@
 {
     "name": "jamesread/faridoon",
     "type": "project",
+	"config": {
+		"vendor-dir": "src/vendor/"
+	},
     "require": {
         "jwread/lib-allure": "^2",
         "smarty/smarty": "^4.0"

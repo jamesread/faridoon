@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "jwread/lib-allure",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jamesread/libAllure.git",
-                "reference": "60ca90b7312ddfa0b752f87b96cd72c7f2aa12bb"
+                "reference": "71711631e9b5e1781228c287e6a7a53a725bcf9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jamesread/libAllure/zipball/60ca90b7312ddfa0b752f87b96cd72c7f2aa12bb",
-                "reference": "60ca90b7312ddfa0b752f87b96cd72c7f2aa12bb",
+                "url": "https://api.github.com/repos/jamesread/libAllure/zipball/71711631e9b5e1781228c287e6a7a53a725bcf9b",
+                "reference": "71711631e9b5e1781228c287e6a7a53a725bcf9b",
                 "shasum": ""
             },
             "require-dev": {
@@ -46,22 +46,22 @@
             "description": "A set of utilities, helpers and shims. It aims to be pretty modular and lightweight.",
             "support": {
                 "issues": "https://github.com/jamesread/libAllure/issues",
-                "source": "https://github.com/jamesread/libAllure/tree/2.0.4"
+                "source": "https://github.com/jamesread/libAllure/tree/2.0.5"
             },
-            "time": "2022-01-21T17:24:36+00:00"
+            "time": "2022-01-21T22:02:12+00:00"
         },
         {
             "name": "smarty/smarty",
-            "version": "v4.0.4",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "cdf0f2b164fbb9a96f86be97713a2426f0bb0c97"
+                "reference": "71036be8be02bf93735c47b0b745f722efbc729f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/cdf0f2b164fbb9a96f86be97713a2426f0bb0c97",
-                "reference": "cdf0f2b164fbb9a96f86be97713a2426f0bb0c97",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/71036be8be02bf93735c47b0b745f722efbc729f",
+                "reference": "71036be8be02bf93735c47b0b745f722efbc729f",
                 "shasum": ""
             },
             "require": {
@@ -112,9 +112,9 @@
             "support": {
                 "forum": "https://github.com/smarty-php/smarty/discussions",
                 "issues": "https://github.com/smarty-php/smarty/issues",
-                "source": "https://github.com/smarty-php/smarty/tree/v4.0.4"
+                "source": "https://github.com/smarty-php/smarty/tree/v4.1.1"
             },
-            "time": "2022-01-17T23:17:19+00:00"
+            "time": "2022-05-17T12:56:28+00:00"
         }
     ],
     "packages-dev": [],
@@ -125,5 +125,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
