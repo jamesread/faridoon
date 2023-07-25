@@ -3,7 +3,7 @@
 $tpl->assign('quote', $quote);
 $tpl->display('quote.tpl');
 
-#' . $quote['id'] . '</a></strong> - <span class = "subtle">' . $quote['created'] .'</span>';
+// ' . $quote['id'] . '</a></strong> - <span class = "subtle">' . $quote['created'] .'</span>';
     
 
     /**

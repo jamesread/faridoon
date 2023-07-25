@@ -1,16 +1,16 @@
-	</div>
+    </div>
 
-	<div id = "footer">
-		Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a>.
-	</div>
+    <div id = "footer">
+        Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a>.
+    </div>
 
-	<script type = "text/javascript">
+    <script type = "text/javascript">
 $('pre.codeSnippit.javascript').snippet('javascript', {style: 'ide-eclipse'});
 $('pre.codeSnippit.csharp').snippet('csharp', {style: 'ide-eclipse'});
 $('pre.codeSnippit.php').snippet('php', {style: 'ide-eclipse'});
 $('pre.codeSnippit.java').snippet('java', {style: 'ide-eclipse'});
 $('pre.codeSnippit.python').snippet('python', {style: 'ide-eclipse'});
-	</script>
+    </script>
 </body>
 </html>
 <?php exit; ?>

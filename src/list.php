@@ -31,7 +31,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $quotes = $stmt->fetchAll();
 
-$foundRows = intval($db->prepare('SELECT found_rows() AS count')->execute()->fetchColumn());
+$foundRows = intval($db->prepare('SELECT found_rows() AS count')->executeRet()->fetchColumn());
 $numPages = ceil($foundRows / $limit);
 
 $navigable ? pagingLinks($start, $page, $numPages) : null;

@@ -5,7 +5,7 @@
 		"vendor-dir": "src/vendor/"
 	},
     "require": {
-        "jwread/lib-allure": "^2",
+        "jwread/lib-allure": "^8",
         "smarty/smarty": "^4.0"
     },
     "autoload": {

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca6f3ad48b67a962805bfa843821563a",
+    "content-hash": "4d9fe1b94b4af3bd756ad15604bc3f35",
     "packages": [
         {
             "name": "jwread/lib-allure",
-            "version": "2.0.5",
+            "version": "8.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jamesread/libAllure.git",
-                "reference": "71711631e9b5e1781228c287e6a7a53a725bcf9b"
+                "reference": "d0ff221f3e389ae49a21411150752a0cbbb916ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jamesread/libAllure/zipball/71711631e9b5e1781228c287e6a7a53a725bcf9b",
-                "reference": "71711631e9b5e1781228c287e6a7a53a725bcf9b",
+                "url": "https://api.github.com/repos/jamesread/libAllure/zipball/d0ff221f3e389ae49a21411150752a0cbbb916ba",
+                "reference": "d0ff221f3e389ae49a21411150752a0cbbb916ba",
                 "shasum": ""
             },
             "require-dev": {
@@ -35,7 +35,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0"
+                "GPL-2.0-only"
             ],
             "authors": [
                 {
@@ -43,25 +43,26 @@
                     "email": "contact@jwread.com"
                 }
             ],
-            "description": "A set of utilities, helpers and shims. It aims to be pretty modular and lightweight.",
+            "description": "A set of utilities, helpers and shims. It aims to be pretty modular and lightweight. API Docs are here; http://jamesread.github.io/libAllure/",
+            "homepage": "https://github.com/jamesread/libAllure",
             "support": {
                 "issues": "https://github.com/jamesread/libAllure/issues",
-                "source": "https://github.com/jamesread/libAllure/tree/2.0.5"
+                "source": "https://github.com/jamesread/libAllure/tree/8.0.3"
             },
-            "time": "2022-01-21T22:02:12+00:00"
+            "time": "2023-07-20T11:20:26+00:00"
         },
         {
             "name": "smarty/smarty",
-            "version": "v4.1.1",
+            "version": "v4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "71036be8be02bf93735c47b0b745f722efbc729f"
+                "reference": "1d9cda2be34fd6edb74924684260636fd0b89288"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/71036be8be02bf93735c47b0b745f722efbc729f",
-                "reference": "71036be8be02bf93735c47b0b745f722efbc729f",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/1d9cda2be34fd6edb74924684260636fd0b89288",
+                "reference": "1d9cda2be34fd6edb74924684260636fd0b89288",
                 "shasum": ""
             },
             "require": {
@@ -112,9 +113,9 @@
             "support": {
                 "forum": "https://github.com/smarty-php/smarty/discussions",
                 "issues": "https://github.com/smarty-php/smarty/issues",
-                "source": "https://github.com/smarty-php/smarty/tree/v4.1.1"
+                "source": "https://github.com/smarty-php/smarty/tree/v4.3.2"
             },
-            "time": "2022-05-17T12:56:28+00:00"
+            "time": "2023-07-19T10:27:36+00:00"
         }
     ],
     "packages-dev": [],

@@ -1,8 +1,18 @@
 <?php
 
+set_include_path(
+    get_include_path() 
+    . PATH_SEPARATOR . '/usr/share/libAllure/' 
+    . PATH_SEPARATOR . '/config/'
+);
+
+if (is_dir('/config/') && !file_exists('/config/settings.php')) {
+    copy('includes/settings.template.php', '/config/settings.php');
+}
+
 require_once 'settings.php';
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 use \libAllure\ErrorHandler;
 
