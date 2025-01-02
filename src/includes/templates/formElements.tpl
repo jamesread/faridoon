@@ -1,5 +1,3 @@
-
-<div>
 {foreach from = $elements item = "element"}
 	{if is_array($element)}
 		{include file = "formElements.tpl" elements=$element}
@@ -11,19 +9,33 @@
 		{elseif $element->getType() eq 'ElementButton'}
 			<button value = "{$form->getName()}" name = "{$element->getName()}" type = "submit">{$element->getCaption()}</button>
 		{else}
-			<fieldset>				
-				{$element->render()}
+			<label class = "{($element->isRequired()) ? 'required' : 'optional'}" for = "{$element->getName()}">{$element->getCaption()}</label>
 
-				{if $element->description ne ''}
-				<p class = "description">{$element->description}</p>
-				{/if}
+			<div>
+			{$element->render()}
+			</div>
 
-				{if $element->getValidationError() ne ''}
-				<p class = "formValidationError">{$element->getValidationError()}</p>
-				{/if}
-			</fieldset>
+			<p class = "description">
+			{if $element->description ne ''}
+				{$element->description}
+			{/if}
+			<p>
+
+			<div class = "suggested">
+			{if !empty($suggestedValues)}
+				{foreach from = $suggestedValues key = sv item = caption}
+					<span class = "dummyLink" onclick = "document.getElementById('{$element->getName()}').value = '{$sv} '">{$caption}</span>';
+				{/foreach}
+			{/if}
+			</div>
+
+			<p class = "formValidationError">
+			{if $element->getValidationError() ne ''}
+				{$element->getValidationError()}
+			{/if}
+			</p>
 		{/if}
 	{/if}
 {/foreach}
 
-</div>
+

@@ -8,9 +8,6 @@ $_SESSION['admin'] = false;
 
 require_once 'includes/widgets/header.php';
 
-echo '<h2>Logged out.</h2>';
-echo '<p>ttyl.</p>';
+$tpl->display('logout.tpl');
 
 require_once 'includes/widgets/footer.php';
-
-?>

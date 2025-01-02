@@ -1,5 +1,7 @@
 <?php
 
+namespace faridoon;
+
 class Quote
 {
     public $id;
@@ -9,6 +11,25 @@ class Quote
     public $created = 'unknown';
 
     private $content;
+
+    private static $colors = array(
+        '#CC0066', '#3399FF', 'green', 'orange'
+    );
+
+    private $usernameColors = array();
+
+    private function getUsernameColor($username)
+    {
+        if (isset($this->usernameColors[$username])) {
+            return $this->usernameColors[$username];
+        }
+
+        $col = current(self:$colors);
+        next(self::$colors);
+        $this->usernameColors[$username] = $col;
+
+        return $col;
+    }
 
     public function unmarshalFromDatabase($dbquote)
     {
@@ -50,11 +71,7 @@ class Quote
 
     private static function findUsernames(array $quoteContent)
     {
-        global $colors;
-        global $usernameColors;
-
-        reset($colors);
-        $usernameColors = array();
+        reset(self::$colors);
 
         foreach ($quoteContent as &$line) {
             $regex = '#^[\]\[\(\)\:\d ]*<?[&+@~]{0,1}([\w\- ]+)[:>] (.*)#i';
@@ -62,27 +79,24 @@ class Quote
             preg_match($regex, $line['content'], $matches);
 
             switch (count($matches)) {
-            case 3: 
-                $msg = str_replace('<br />', '', $matches[2]);
-                $msg = trim($msg);
+                case 3:
+                    $msg = str_replace('<br />', '', $matches[2]);
+                    $msg = trim($msg);
 
-                if (empty($msg)) {
+                    if (empty($msg)) {
+                        break;
+                    }
+
+                    $line['username'] = $matches[1];
+                    $line['usernameColor'] = getUsernameColor($line['username']);
+                    $line['content'] = htmlentities($matches[2]);
+
                     break;
-                }
-
-                $line['username'] = $matches[1];
-                $line['usernameColor'] = getCol($line['username']);
-                $line['content'] = htmlentities($matches[2]);
-
-                break;
-            default: 
-                break;
+                default:
+                    break;
             }
-
         }
 
         return $quoteContent;
     }
 }
-
-?>

@@ -20,7 +20,7 @@ if (empty($quote)) {
         $f->process();
 
         echo '<h2>Quote edited.</h2>';
-        echo '<p><a href = "show.php?id=' . $f->getElementValue('id') . '">#' . $f->getElementValue('id'). '</a></p>';
+        echo '<p><a href = "show.php?id=' . $f->getElementValue('id') . '">#' . $f->getElementValue('id') . '</a></p>';
 
         include_once 'includes/widgets/footer.php';
     }
@@ -29,5 +29,3 @@ if (empty($quote)) {
 }
 
 require_once 'includes/widgets/footer.php';
-
-?>

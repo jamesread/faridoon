@@ -3,15 +3,8 @@
 require_once 'includes/common.php';
 require_once 'libAllure/util/shortcuts.php';
 
-use \libAllure\Session;
-use \libAllure\DatabaseFactory;
-
-function outputJson($o)
-{
-    header('Content-Type: application/json');
-    echo json_encode($o);
-    exit;
-}
+use libAllure\Session;
+use libAllure\DatabaseFactory;
 
 $cause = "";
 
@@ -20,16 +13,18 @@ try {
     $id = san()->filterUint('id');
 
     switch ($dir) {
-    case 'up': $delta = 1; 
-        break;
-    case 'down': $delta = -1; 
-        break;
-    default: 
-        throw new Exception('What direction is that?!');
+        case 'up':
+            $delta = 1;
+            break;
+        case 'down':
+            $delta = -1;
+            break;
+        default:
+            throw new Exception('What direction is that?!');
     }
 
     if (!Session::isLoggedIn()) {
-        $cause = "needsLogin";
+        $cause = 'needsLogin';
         throw new Exception("You need to be logged in.");
     } else {
         $sql = 'SELECT v.delta FROM votes v WHERE v.quote = :quote AND v.user = :user LIMIT 1';
@@ -46,7 +41,7 @@ try {
 
             if ($delta > 1) {
                 $delta = 1;
-            } else if ($delta < -1) {
+            } elseif ($delta < -1) {
                 $delta = -1;
             }
         }
@@ -84,5 +79,3 @@ try {
 
     outputJson($error);
 }
-
-?>

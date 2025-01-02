@@ -1,8 +1,8 @@
     </div>
 
-    <div id = "footer">
-        Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a>.
-    </div>
+    <footer>
+        <span class = "subtle">Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a>.</span>
+    </footer>
 
     <script type = "text/javascript">
 $('pre.codeSnippit.javascript').snippet('javascript', {style: 'ide-eclipse'});

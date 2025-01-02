@@ -19,8 +19,6 @@ if ($stmt->numRows() == 0) {
     include_once 'includes/widgets/quote.php';
 
     echo '<br /><br /><p>There are <a href = "list.php">many more quotes</a>, just in case this was not as exciting as you expected.</p>';
-}    
+}
 
 require_once 'includes/widgets/footer.php';
-
-?>

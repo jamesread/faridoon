@@ -1,0 +1,48 @@
+---
+name: PHP CodeStyle
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@2.30.2
+        with:
+          php-version: '8.3'
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v4.0.2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: add bin to $PATH
+        run: |
+          echo "$GITHUB_WORKSPACE/src/private/libraries/bin/" >> $GITHUB_PATH
+
+      - name: Run phpcs
+        run: make phpcs
+
+      - name: Run phpstan
+        run: make phpstan

@@ -2,7 +2,7 @@
 
 require_once 'includes/common.php';
 
-use \libAllure\util\FormRegister;
+use libAllure\util\FormRegister;
 
 $f = new FormRegister();
 
@@ -15,5 +15,3 @@ if ($f->validate()) {
     $tpl->displayForm($f);
     include_once 'includes/widgets/footer.php';
 }
-
-?>

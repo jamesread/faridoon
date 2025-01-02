@@ -9,7 +9,9 @@ if ($f->validate()) {
         $f->process();
 
         include_once 'includes/widgets/header.php';
-        echo '<p>You have been logged in. Well done.</p>';
+
+        $tpl->display('loggedin.tpl');
+
         include_once 'includes/widgets/footer.php';
     } catch (Exception $e) {
         include_once 'includes/widgets/header.php';
@@ -23,7 +25,5 @@ if ($f->validate()) {
     $tpl->displayForm($f);
     echo '</div>';
 }
-    
-require_once 'includes/widgets/footer.php';
 
-?>
+require_once 'includes/widgets/footer.php';

@@ -1,4 +1,4 @@
-<div class = "quoteContainer" id = "quote{$quote->id}">
+<section class = "quoteContainer" id = "quote{$quote->id}">
 	<div class = "voteContainer">
 		<a class = "voteButton" onclick = "voteUp({$quote->id})" class = "up">&#9650;</a>
 		<span class = "voteCount">{$quote->voteCount}</span>
@@ -32,4 +32,4 @@
 			{/foreach}
 		</p>
 	</div>
-</div>
+</section>

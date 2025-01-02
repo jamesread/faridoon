@@ -8,11 +8,7 @@ $f = new FormQuote();
 if ($f->validate()) {
     $f->process();
 
-    echo '<p>Oh goodie. Another quote!</p>';
-
-    if (!isAdmin()) {
-        echo '<p class = "good">Your quote needs approval before it shows up in the list.</p>';
-    }
+    $tpl->display('quoteAdded.tpl');
 
     include_once 'includes/widgets/footer.php';
 }
@@ -20,5 +16,3 @@ if ($f->validate()) {
 $tpl->displayForm($f);
 
 require_once 'includes/widgets/footer.php';
-
-?>

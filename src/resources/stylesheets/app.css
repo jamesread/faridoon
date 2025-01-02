@@ -1,0 +1,195 @@
+nav {
+  display: flex;
+  flex-grow: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+}
+
+section {
+  max-width: 800px;
+  margin: 2em auto;
+}
+
+section.small {
+  width: 30%;
+  margin: auto;
+}
+
+section *:last-child {
+  margin-bottom: 0;
+}
+
+.quoteContainer ul {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.quoteContainer ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+nav ul:first-child {
+  flex-grow: 1;
+}
+
+#content, #footer {
+  margin: auto;
+  width: 90%;
+}
+
+textarea {
+  width: 100% !important;
+  display: block;
+  margin: 0;
+}
+
+p.quote, .snippet-wrap {
+  font-family: monospace;
+  margin-top: .6em;
+}
+
+span.line {
+  display: block;
+  padding: .2em;
+}
+
+span.line:hover {
+  background-color: beige;
+}
+
+.good {
+  color: green;
+}
+
+.bad {
+  color: red;
+}
+
+.formValidationError {
+  color: red;
+}
+
+.description {
+  color: gray;
+}
+
+div.pagination {
+  text-align: center;
+  padding: 1em;
+}
+
+span.currentPage {
+  font-weight: bold;
+  padding: 1em;
+}
+
+span.subtle, h1 span.subtle a {
+  color: #666;
+}
+
+div.container {
+  display: block;
+  vertical-align: top;
+  width: 50%;
+  margin: auto;
+}
+
+.quoteContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.5em !important;
+}
+
+div.voteContainer {
+  flex: 0 1 auto;
+  margin-right: 1em;
+  vertical-align: top;
+  text-align: center;
+  min-width: 2em;
+}
+
+div.voteContainer a {
+  display: block;
+  color: lightgray;
+  cursor: pointer;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+div.voteContainer a:hover {
+  color: gray;
+}
+
+div.textContainer {
+  flex: 2 2  auto;
+}
+
+span.voteCount.novotes {
+  color: gray;
+}
+
+span.voteCount {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+p.error {
+  background-color: salmon;
+  border: 2px solid red;
+  position: fixed;
+  left: 2.5%;
+  top: 12.5%;
+  padding: .4em;
+  cursor: pointer;
+}
+
+p.error:hover {
+  border-color: black;
+}
+
+button {
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 640px) {
+  #content, #footer, body {
+    width: auto;
+  }
+
+  h1 {
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  div.navbar {
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #999;
+  }
+
+  ul.navigation.right {
+    border-left: 1px dashed #999;
+  }
+
+  div.voteContainer {
+    text-align: center;
+    margin-right: 0.5em;
+  }
+
+  span.voteCount {
+    display: block;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+

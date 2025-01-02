@@ -1,26 +1,6 @@
 <?php
 
-use \libAllure\Session;
-
-$usernameColors = array();
-$colors = array(
-    '#CC0066', '#3399FF', 'green', 'orange'
-);
-
-function getCol($username)
-{
-    global $usernameColors;
-    global $colors;
-
-    if (isset($usernameColors[$username])) {
-        return $usernameColors[$username];
-    } else {
-        $col = current($colors); next($colors);
-        $usernameColors[$username] = $col;
-    }
-
-    return $col;
-}
+use libAllure\Session;
 
 /*
  * Flattening a multi-dimensional array into a
@@ -80,13 +60,13 @@ function isAdmin()
 function pagingLinks($start, $page, $numPages)
 {
     echo '<div class = "pagination">';
-    if ($start > 0) { 
+    if ($start > 0) {
         echo '<a href = "list.php?page=' . ($page - 1) . '">&laquo; prev</a> ';
     } else {
         echo '&laquo; prev';
     }
 
-    echo ' <span class = "currentPage">' . ($page + 1) . '/' . ($numPages + 1) . '</span> ';
+    echo ' <span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages + 1) . '</span> ';
 
     if ($page < $numPages) {
         echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
@@ -100,5 +80,9 @@ function randomLink()
 {
 }
 
-
-?>
+function outputJson($o)
+{
+    header('Content-Type: application/json');
+    echo json_encode($o);
+    exit;
+}

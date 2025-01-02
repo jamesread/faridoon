@@ -1,10 +1,12 @@
 <?php
 
-use \libAllure\Form;
-use \libAllure\ElementInput;
-use \libAllure\ElementTextbox;
-use \libAllure\ElementCheckbox;
-use \libAllure\ElementSelect;
+namespace faridoon;
+
+use libAllure\Form;
+use libAllure\ElementInput;
+use libAllure\ElementTextbox;
+use libAllure\ElementCheckbox;
+use libAllure\ElementSelect;
 
 class FormQuote extends Form
 {
@@ -12,7 +14,7 @@ class FormQuote extends Form
 
     public function __construct(array $quote = null)
     {
-        parent::__construct('add', 'Add');
+        parent::__construct('add', 'Add Quote');
         $this->setFullyQualifiedElementNames(false);
 
         $this->isEdit = is_array($quote);
@@ -64,5 +66,3 @@ class FormQuote extends Form
         $stmt->execute();
     }
 }
-
-?>

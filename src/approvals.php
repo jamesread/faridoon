@@ -16,7 +16,7 @@ if (!empty($approveId)) {
     $stmt->bindValue(':itemId', $approveId);
     $stmt->execute();
 
-    echo '<p class = "good">Approved. You probably just made somebody very happy.</p>';
+    $tpl->display('quoteApproved.tpl');
 }
 
 $sql = 'SELECT id, "?" as voteCount, content, approval as approved, date_format(created, "%Y-%m-%d") AS created FROM quotes WHERE approval = 0';
@@ -24,19 +24,14 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $quotes = $stmt->fetchAll();
 
-if (count($quotes) == 0) {
-    echo '<p>Nothing to approve here. Prehaps you would like a crumpet instead?</p>';
-} else {
-    echo '<p><strong>Ooh, there are items to approve.</strong></p>';
+$tpl->assign('count', count($quotes));
+$tpl->display('approveHeader.tpl');
 
-    foreach ($quotes as $dbquote) {
-        $quote = new Quote();
-        $quote->unmarshalFromDatabase($dbquote);
+foreach ($quotes as $dbquote) {
+    $quote = new Quote();
+    $quote->unmarshalFromDatabase($dbquote);
 
-        include 'includes/widgets/quote.php';
-    }
+    include 'includes/widgets/quote.php';
 }
 
 require_once 'includes/widgets/footer.php';
-
-?>

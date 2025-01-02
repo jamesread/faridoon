@@ -2,7 +2,7 @@
 
 require_once 'includes/common.php';
 
-use \libAllure\Session;
+use libAllure\Session;
 
 echo <<<DT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -13,32 +13,30 @@ DT;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title><?php echo SITE_TITLE ?></title>
+    <title><?php echo $cfg->get('SITE_TITLE'); ?></title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/main.css" />
-    <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/jquery.snippet.min.css" />
+    <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/theme.css" />
+    <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/app.css" />
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type = "text/javascript"></script>
-    <script src="resources/javascript/jquery.snippet.min.js" type = "text/javascript"></script>
     <script src="resources/javascript/main.js" type = "text/javascript"></script>
 </head>
 
 <body>
-    <div id = "header">
-        <h1><?php echo SITE_TITLE ?> <span class = "subtle"> - Powered by <a href = "https://github.com/jamesread/faridoon">faridoon</a></span></h1>
-        <div class = "navbar">
-            <ul class = "navigation left">
+    <header>
+        <h1><?php echo $cfg->get('SITE_TITLE'); ?></h1>
+        <nav>
+            <ul class = "navigation">
                 <li><a href = "list.php?order=latest">Latest</a></li>
                 <li><a href = "list.php?order=random">Random</a></li>
                 <li><a href = "list.php?order=rank">Highest voted</a></li>
             </ul>
-            <ul class = "navigation right">
-                <?php 
-                
-                if (Session::isLoggedIn()) {         
+            <ul class = "navigation">
+                <?php
+
+                if (Session::isLoggedIn()) {
                     echo '<li>Logged in as <strong>' . Session::getUser()->getUsername() . '</strong></li>';
                     echo '<li><a href = "logout.php">Logout</a></li>';
 
@@ -56,17 +54,12 @@ DT;
                             echo '<li><a href = "approvals.php">Approvals</a> (' . $countNew . ')</li>';
                         }
                     }
-            
-                } else { 
+                } else {
                     echo '<li><a href = "login.php">Login</a></li>';
                 } ?>
 
                 <li class = "right"><a href = "add.php">Add</a></li>
             </ul>
-        </div>
-    </div>
-    <div id = "content">
-<?php
-
-
-?>
+        </nav>
+    </header>
+    <main>

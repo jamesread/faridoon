@@ -1,4 +1,5 @@
 build
 **/*.swp
-
-src/vendor/
+site
+vendor/
+.env.dev

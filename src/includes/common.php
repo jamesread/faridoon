@@ -1,44 +1,48 @@
 <?php
 
-set_include_path(
-    get_include_path() 
-    . PATH_SEPARATOR . '/usr/share/libAllure/' 
-    . PATH_SEPARATOR . '/config/'
-);
-
-if (is_dir('/config/') && !file_exists('/config/settings.php')) {
-    copy('includes/settings.template.php', '/config/settings.php');
-}
-
-require_once 'settings.php';
-
 require_once 'vendor/autoload.php';
 
-use \libAllure\ErrorHandler;
+use libAllure\ErrorHandler;
 
 ErrorHandler::getInstance()->beGreedy();
 
-use \libAllure\Database;
-use \libAllure\DatabaseFactory;
+$cfg = new \libAllure\ConfigFile();
+$cfg->set(
+    [
+        'DB_NAME' => 'faridoon',
+        'DB_HOST' => 'mysql',
+        'SITE_TITLE' => 'Faridoon',
+    ]
+);
+$cfg->loadFromPaths(
+    [
+        '/config/',
+        '/var/www/html/faridoon/',
+        '/etc/faridoon/config.ini',
+    ]
+);
+$cfg->loadFromEnv();
 
-$db = new Database('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+use libAllure\Database;
+use libAllure\DatabaseFactory;
+
+$db = new Database($cfg->getDsn(), $cfg->get('DB_USER'), $cfg->get('DB_PASS'));
 DatabaseFactory::registerInstance($db);
 
 require_once 'includes/functionality.php';
 
-use \libAllure\AuthBackend;
-use \libAllure\AuthBackendDatabase;
+use libAllure\AuthBackend;
+use libAllure\AuthBackendDatabase;
 
 $backend = new AuthBackendDatabase($db);
 $backend->register();
 
-use \libAllure\Session;
+use libAllure\Session;
 
 Session::setSessionName('faridoon');
 Session::start();
 
-use \libAllure\Template;
+use libAllure\Template;
 
 $tpl = new Template(sys_get_temp_dir() . '/faridoon/' . 'includes/templates/');
-
-?>
+$tpl->registerModifier('isAdmin', 'isAdmin');
