@@ -86,3 +86,15 @@ function outputJson($o)
     echo json_encode($o);
     exit;
 }
+
+function getCountApprovals()
+{
+    $sql = 'SELECT count(q.id) countNew FROM quotes q WHERE q.approval = 0';
+    $stmt = libAllure\DatabaseFactory::getInstance()->prepare($sql);
+    $stmt->execute();
+    $countNew = $stmt->fetch();
+    $countNew = $countNew['countNew'];
+    $countNew = intval($countNew);
+
+    return $countNew;
+}

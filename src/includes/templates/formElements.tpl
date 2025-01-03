@@ -9,31 +9,27 @@
 		{elseif $element->getType() eq 'ElementButton'}
 			<button value = "{$form->getName()}" name = "{$element->getName()}" type = "submit">{$element->getCaption()}</button>
 		{else}
-			<label class = "{($element->isRequired()) ? 'required' : 'optional'}" for = "{$element->getName()}">{$element->getCaption()}</label>
+			<label id = "lbl-{$element->getName()}" class = "{($element->isRequired()) ? 'required' : 'optional'}" for = "{$element->getName()}">{$element->getCaption()}</label>
 
 			<div>
 			{$element->render()}
 			</div>
 
-			<p class = "description">
-			{if $element->description ne ''}
-				{$element->description}
-			{/if}
-			<p>
-
-			<div class = "suggested">
-			{if !empty($suggestedValues)}
-				{foreach from = $suggestedValues key = sv item = caption}
-					<span class = "dummyLink" onclick = "document.getElementById('{$element->getName()}').value = '{$sv} '">{$caption}</span>';
-				{/foreach}
-			{/if}
+			<div class = "description {if $element->description eq ''}empty{else}notempty{/if}">
+				<p>{$element->description}</p>
 			</div>
 
-			<p class = "formValidationError">
-			{if $element->getValidationError() ne ''}
-				{$element->getValidationError()}
-			{/if}
-			</p>
+			<div class = "suggested {if empty($suggestedValues)}empty{else}notempty{/if}">
+				{if !empty($suggestedValues)}
+					{foreach from = $suggestedValues key = sv item = caption}
+						<span class = "dummyLink" onclick = "document.getElementById('{$element->getName()}').value = '{$sv} '">{$caption}</span>';
+					{/foreach}
+				{/if}
+			</div>
+
+			<div class = "{if $element->getValidationError() eq ''}empty{else}notempty{/if}">
+				<p class = "formValidationError">{$element->getValidationError()}</p>
+			</div>
 		{/if}
 	{/if}
 {/foreach}

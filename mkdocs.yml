@@ -44,4 +44,4 @@ nav:
       - Introduction: installation/index.md
       - docker: installation/docker.md
       - docker-compose: installation/docker-compose.md
-
+  - Configuration: configuration/index.md

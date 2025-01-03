@@ -58,24 +58,34 @@ span.line {
   padding: .2em;
 }
 
-span.line:hover {
-  background-color: beige;
-}
-
-.good {
-  color: green;
-}
-
-.bad {
-  color: red;
-}
-
 .formValidationError {
   color: red;
 }
 
-.description {
-  color: gray;
+a, a:visited {
+  color: #5f1a99;
+  text-decoration: none;
+}
+
+header a, header a:visited {
+  color: white;
+}
+
+header img.logo {
+  margin-right: .3em;
+}
+
+header {
+  color: white;
+  background-color: #5f1a99;
+  box-shadow: 0 0 1em #403636;
+  place-items: center;
+}
+
+.svg-icon {
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: bottom;
 }
 
 div.pagination {
@@ -88,10 +98,6 @@ span.currentPage {
   padding: 1em;
 }
 
-span.subtle, h1 span.subtle a {
-  color: #666;
-}
-
 div.container {
   display: block;
   vertical-align: top;
@@ -99,10 +105,13 @@ div.container {
   margin: auto;
 }
 
-.quoteContainer {
+section.quote {
+  margin-bottom: 3.5em;
+}
+
+.quoteContainer { 
   display: flex;
-  align-items: center;
-  margin-bottom: 3.5em !important;
+  flex-direction: column;
 }
 
 div.voteContainer {
@@ -125,8 +134,14 @@ div.voteContainer a:hover {
   color: gray;
 }
 
-div.textContainer {
-  flex: 2 2  auto;
+div.quoteHeader {
+  display: flex;
+  gap: .5em;
+}
+
+div.quoteHeader .adminLinks {
+  flex-grow: 2;
+  text-align: end;
 }
 
 span.voteCount.novotes {
@@ -141,22 +156,47 @@ span.voteCount {
   text-align: center;
 }
 
-p.error {
-  background-color: salmon;
-  border: 2px solid red;
-  position: fixed;
-  left: 2.5%;
-  top: 12.5%;
-  padding: .4em;
-  cursor: pointer;
+form#add {
+  grid-template-columns: 1fr;
 }
 
-p.error:hover {
-  border-color: black;
+form#add button {
+  justify-self: baseline;
 }
 
-button {
-  font-family: sans-serif;
+form#add div.empty {
+  display: none;
+}
+
+span.username {
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: #ddd;
+  }
+
+  section {
+    background-color: #444;
+    color: #ddd;
+    border-radius: 1em;
+    box-shadow: 0 0 1em #261f1f;
+    padding: 1em;
+  }
+
+  header {
+    box-shadow: 0 0 1em #1c1c1c;
+  }
+
+  a, a:visited {
+    color: #ddd;
+  }
+
+  a:hover {
+    color: #fff;
+  }
 }
 
 @media screen and (max-width: 640px) {

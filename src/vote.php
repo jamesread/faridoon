@@ -5,6 +5,16 @@ require_once 'includes/common.php';
 use libAllure\Session;
 use libAllure\DatabaseFactory;
 
+if (!$cfg->getBool('VOTING_ENABLED')) {
+    outputJson(
+        array(
+        "type" => "error",
+        "message" => "Voting is disabled.",
+        "cause" => "votingDisabled"
+        )
+    );
+}
+
 $cause = "";
 
 try {

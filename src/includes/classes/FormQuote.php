@@ -28,6 +28,19 @@ class FormQuote extends Form
         }
 
         $this->addElement(new ElementTextbox('content', 'Content', stripslashes($content), 'Note: Usernames are automatically highlighted. Timestamps are automatically stripped.'));
+
+        global $cfg;
+        if ($cfg->getBool('ENABLE_SYNTAX_HIGHLIGHTING')) {
+            $this->addSyntaxHighlighting();
+        } else {
+            $this->addElementHidden('syntaxHighlighting', '');
+        }
+
+        //$el->setValue($quote['syntaxHighlighting']);
+        $this->addButtons(Form::BTN_SUBMIT);
+    }
+
+    private function addSyntaxHighlighting(){
         $el = $this->addElement(new ElementSelect('syntaxHighlighting', 'Syntax highlighting for code?', false, 'Is this quote mostly code? If so, it will have pretty formatting applied and usernames will not be highlighted.'));
         $el->addOption('Nope', '');
         $el->addOption('C#', 'csharp');
@@ -35,8 +48,8 @@ class FormQuote extends Form
         $el->addOption('PHP', 'php');
         $el->addOption('Java', 'java');
         $el->addOption('Python', 'python');
-        //$el->setValue($quote['syntaxHighlighting']);
-        $this->addButtons(Form::BTN_SUBMIT);
+
+        $this->addElement($el);
     }
 
     public function process()
@@ -47,11 +60,18 @@ class FormQuote extends Form
     public function processEdit()
     {
         global $db;
+        global $cfg;
+
+        if ($cfg->getBool('ENABLE_SYNTAX_HIGHLIGHTING')) {
+            $syntaxHighlighting = $this->getElementValue('syntaxHighlighting');
+        } else {
+            $syntaxHighlighting = '';
+        }
 
         $sql = 'UPDATE quotes SET content = :content, syntaxHighlighting = :syntaxHighlighting WHERE id = :id ';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':content', $this->getElementValue('content'));
-        $stmt->bindValue(':syntaxHighlighting', $this->getElementValue('syntaxHighlighting'));
+        $stmt->bindValue(':syntaxHighlighting', $syntaxHighlighting);
         $stmt->bindValue(':id', $this->getElementValue('id'));
         $stmt->execute();
     }
