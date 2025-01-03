@@ -77,6 +77,15 @@ function pagingLinks($start, $page, $numPages)
     echo '</div>';
 }
 
+function getCustomCss()
+{
+    if (!file_exists('/config/custom.css')) {
+        return '';
+    } else {
+        return file_get_contents('/config/custom.css');
+    }
+}
+
 function randomLink()
 {
 }

@@ -14,6 +14,9 @@
 
     <script src="resources/javascript/main.js" type = "text/javascript"></script>
 
+	<style type = "text/css">
+	{$inlineCss}
+	</style>
 </head>
 
 <body>

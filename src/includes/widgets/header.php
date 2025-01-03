@@ -17,4 +17,5 @@ if (Session::isLoggedIn()) {
 
 $tpl->assign('isVotingEnabled', $cfg->get('ENABLE_VOTING'));
 $tpl->assign('siteTitle', $cfg->get('SITE_TITLE'));
+$tpl->assign('inlineCss', getCustomCss());
 $tpl->display('header.tpl');

@@ -2,6 +2,8 @@
 
 require_once '../vendor/autoload.php';
 
+@include_once '/config/init.php';
+
 use libAllure\ErrorHandler;
 
 ErrorHandler::getInstance()->beGreedy();
