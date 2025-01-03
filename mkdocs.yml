@@ -15,7 +15,7 @@ theme:
   include_search_page: true
   search_index_only: true
   palette:
-    primary: '#5f1a99'
+    primary: 'deep purple'
   features:
     - search.suggest
     - search.highlight
