@@ -10,7 +10,10 @@
     <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/theme.css" />
     <link rel = "stylesheet" type = "text/css" href = "resources/stylesheets/app.css" />
 
+	<link rel = "shortcut icon" type = "image/png" href = "resources/svg/faridoon.png" />
+
     <script src="resources/javascript/main.js" type = "text/javascript"></script>
+
 </head>
 
 <body>

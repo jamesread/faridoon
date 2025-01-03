@@ -172,6 +172,10 @@ span.username {
   font-weight: bold;
 }
 
+nav li a:hover {
+  background-color: #3a0b62;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #333;
