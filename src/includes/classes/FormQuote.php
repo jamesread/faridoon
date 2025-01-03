@@ -40,7 +40,8 @@ class FormQuote extends Form
         $this->addButtons(Form::BTN_SUBMIT);
     }
 
-    private function addSyntaxHighlighting(){
+    private function addSyntaxHighlighting()
+    {
         $el = $this->addElement(new ElementSelect('syntaxHighlighting', 'Syntax highlighting for code?', false, 'Is this quote mostly code? If so, it will have pretty formatting applied and usernames will not be highlighted.'));
         $el->addOption('Nope', '');
         $el->addOption('C#', 'csharp');

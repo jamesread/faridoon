@@ -109,7 +109,7 @@ section.quote {
   margin-bottom: 3.5em;
 }
 
-.quoteContainer { 
+.quoteContainer {
   display: flex;
   flex-direction: column;
 }
