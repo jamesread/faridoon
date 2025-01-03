@@ -9,24 +9,26 @@ class Quote
     public $voteCount = 0;
     public $approved = true;
     public $created = 'unknown';
+    public $lines = [];
 
-    private $content;
+    private $rawContent;
 
     private static $colors = array(
         '#CC0066', '#3399FF', 'green', 'orange'
     );
 
-    private static $usernameColors = array();
+    private $usernameColors = array();
 
-    private static function getUsernameColor($username)
+    private function getUsernameColor($username)
     {
-        if (isset(self::$usernameColors[$username])) {
-            return self::$usernameColors[$username];
+        if (isset($this->usernameColors[$username])) {
+            return $this->usernameColors[$username];
         }
 
         $col = current(self::$colors);
         next(self::$colors);
-        self::$usernameColors[$username] = $col;
+
+        $this->usernameColors[$username] = $col;
 
         return $col;
     }
@@ -37,24 +39,34 @@ class Quote
         $this->created = $dbquote['created'];
         $this->voteCount = $dbquote['voteCount'];
         $this->approved = $dbquote['approved'];
-        $this->content = $dbquote['content'];
+        $this->rawContent = $dbquote['content'];
+
+        $this->parse();
     }
 
-    public function getContentForHtml()
+    public function unmarshalFromText($text)
     {
-        $ret = $this->content;
+        $this->id = 0;
+        $this->voteCount = 0;
+        $this->approved = true;
+        $this->created = 'unknown';
+        $this->rawContent = $text;
 
-        $ret = htmlspecialchars($ret);
-        $ret = stripslashes($ret);
-        $ret = self::explodeQuote($ret);
-        $ret = self::findUsernames($ret);
-
-        return $ret;
+        $this->parse();
     }
 
-    private static function explodeQuote($quoteContent)
+    private function parse()
     {
-        $linesFixed = array();
+        $c = $this->rawContent;
+        $c = stripslashes($c);
+
+        $this->explodeQuote($c);
+        $this->findUsernames();
+    }
+
+    public function explodeQuote($quoteContent)
+    {
+        $this->lines = [];
 
         foreach (explode("\n", $quoteContent) as $line) {
             $lineX = array(
@@ -63,19 +75,17 @@ class Quote
                 'bgColor' => null,
             );
 
-            $linesFixed[] = $lineX;
+            $this->lines[] = $lineX;
         }
-
-        return $linesFixed;
     }
 
-    private static function findUsernames(array $quoteContent)
+    private function findUsernames()
     {
         reset(self::$colors);
 
-        self::$usernameColors = array();
+        $this->usernameColors = [];
 
-        foreach ($quoteContent as &$line) {
+        foreach ($this->lines as &$line) {
             $regex = '#^[\]\[\(\)\:\d ]*<?[&+@~]{0,1}([\w\- ]+)[:>] (.*)#i';
 
             preg_match($regex, $line['content'], $matches);
@@ -89,16 +99,14 @@ class Quote
                         break;
                     }
 
-                    $line['username'] = $matches[1];
-                    $line['usernameColor'] = self::getUsernameColor($line['username']);
-                    $line['content'] = htmlentities($matches[2]);
+                    $line['username'] = htmlspecialchars($matches[1]);
+                    $line['usernameColor'] = $this->getUsernameColor($line['username']);
+                    $line['content'] = htmlspecialchars($matches[2]);
 
                     break;
                 default:
                     break;
             }
         }
-
-        return $quoteContent;
     }
 }

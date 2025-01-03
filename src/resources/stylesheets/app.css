@@ -1,3 +1,16 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
 nav {
   display: flex;
   flex-grow: 1;
@@ -10,7 +23,6 @@ footer {
 
 section {
   max-width: 800px;
-  margin: 2em auto;
 }
 
 section.small {
@@ -91,6 +103,7 @@ header {
 div.pagination {
   text-align: center;
   padding: 1em;
+  padding-bottom: 0;
 }
 
 span.currentPage {
@@ -106,7 +119,7 @@ div.container {
 }
 
 section.quote {
-  margin-bottom: 3.5em;
+  margin-bottom: 2.5em;
 }
 
 .quoteContainer {

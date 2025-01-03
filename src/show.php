@@ -14,12 +14,13 @@ if ($stmt->numRows() == 0) {
     echo '<p>That quote does not exist.</p>';
 } else {
     $dbquote = $stmt->fetchRow();
+
     $quote = new Quote();
     $quote->unmarshalFromDatabase($dbquote);
 
     include_once 'includes/widgets/quote.php';
 
-    echo '<br /><br /><p>There are <a href = "list.php">many more quotes</a>, just in case this was not as exciting as you expected.</p>';
+    echo '<section><h2>More quotes...</h2><p>There are <a href = "list.php">many more quotes</a>, just in case this was not as exciting as you expected.</p></section>';
 }
 
 require_once 'includes/widgets/footer.php';

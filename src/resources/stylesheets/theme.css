@@ -8,13 +8,15 @@ body {
 
 main {
   margin: 0;
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 section {
   background-color: white;
   padding: 1em;
   border-radius: .4em;
+  margin-top: 1em;
   margin-bottom: 1em;
   box-shadow: 0 0 .5em #9a9a9a;
 }

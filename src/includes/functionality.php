@@ -66,13 +66,14 @@ function pagingLinks($start, $page, $numPages)
         echo '&laquo; prev';
     }
 
-    echo ' <span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages + 1) . '</span> ';
-
-    if ($page < $numPages) {
-        echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
-    } else {
+    if ($page == $numPages - 1) {
+        echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
         echo 'next &raquo;';
+    } else {
+        echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
+        echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
     }
+
     echo '</div>';
 }
 

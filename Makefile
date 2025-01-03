@@ -11,6 +11,9 @@ phpcbf:
 phpstan:
 	vendor/bin/phpstan analyse src/
 
+phpunit:
+	vendor/bin/phpunit tests/*
+
 dist: clean
 	echo "Building: ${VERSION}"
 	mkdir -p build/tmp/

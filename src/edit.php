@@ -20,8 +20,10 @@ if (empty($quote)) {
     if ($f->validate()) {
         $f->process();
 
-        echo '<h2>Quote edited.</h2>';
-        echo '<p><a href = "show.php?id=' . $f->getElementValue('id') . '">#' . $f->getElementValue('id') . '</a></p>';
+        $tpl->assign('quoteId', $f->getElementValue('id'));
+        $tpl->display('quoteEdited.tpl');
+
+        require_once 'show.php';
 
         include_once 'includes/widgets/footer.php';
     }

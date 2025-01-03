@@ -36,8 +36,13 @@ class FormQuote extends Form
             $this->addElementHidden('syntaxHighlighting', '');
         }
 
-        //$el->setValue($quote['syntaxHighlighting']);
-        $this->addButtons(Form::BTN_SUBMIT);
+        $this->addElement(new ElementCheckbox('fixDiscordLinebreaks', 'Fix Discord linebreaks and remove timestamps?', false, 'If you paste a quote from Discord, it may have a lot of newlines around the username. This should fix that.'));
+
+        if ($this->isEdit) {
+            $this->addDefaultButtons('Save');
+        } else {
+            $this->addDefaultButtons('Add');
+        }
     }
 
     private function addSyntaxHighlighting()
@@ -53,12 +58,30 @@ class FormQuote extends Form
         $this->addElement($el);
     }
 
-    public function process()
+    private function fixDiscordLinebreaks($content)
     {
-        ($this->isEdit) ? $this->processEdit() : $this->processAdd();
+        $content = preg_replace('#\[\n(?<date>\d\d:\d\d)\n\]\n(?<username>[\w\d_]+)\n:\n#i', "\\2: ", $content, -1, $count);
+
+        return $content;
     }
 
-    public function processEdit()
+    public function process()
+    {
+        $content = $this->getElementValue('content');
+        $content = preg_replace('#\r\n#', "\n", $content);
+
+        if ($this->getElementValue('fixDiscordLinebreaks')) {
+            $content = $this->fixDiscordLinebreaks($content);
+        }
+
+        if ($this->isEdit) {
+            $this->processEdit($content);
+        } else {
+            $this->processAdd($content);
+        }
+    }
+
+    public function processEdit($content)
     {
         global $db;
         global $cfg;
@@ -71,19 +94,19 @@ class FormQuote extends Form
 
         $sql = 'UPDATE quotes SET content = :content, syntaxHighlighting = :syntaxHighlighting WHERE id = :id ';
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':content', $this->getElementValue('content'));
+        $stmt->bindValue(':content', $content);
         $stmt->bindValue(':syntaxHighlighting', $syntaxHighlighting);
         $stmt->bindValue(':id', $this->getElementValue('id'));
         $stmt->execute();
     }
 
-    public function processAdd()
+    public function processAdd($content)
     {
         global $db;
 
         $sql = 'INSERT INTO quotes (content, created) VALUES (:content, now()) ';
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':content', $this->getElementValue('content'));
+        $stmt->bindValue(':content', $content);
         $stmt->execute();
     }
 }

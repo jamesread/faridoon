@@ -3,7 +3,10 @@
 require_once 'includes/widgets/header.php';
 
 if (!isAdmin()) {
-    echo '<p class = "bad">You are no admin that I know of. Go away.</p>';
+    echo '<section class = "severe">';
+    echo '<h2>Permission denied</h2>';
+    echo '<p>You are no admin that I know of. Go away.</p>';
+    echo '</section>';
     include_once 'includes/widgets/footer.php';
 }
 

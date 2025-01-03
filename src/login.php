@@ -2,7 +2,16 @@
 
 require_once 'includes/common.php';
 
-$f = new \libAllure\util\FormLogin();
+$f = new libAllure\util\FormLogin();
+
+if (libAllure\Session::isLoggedIn()) {
+    include_once 'includes/widgets/header.php';
+
+    $tpl->display('loggedin.tpl');
+
+    include_once 'includes/widgets/footer.php';
+    die();
+}
 
 if ($f->validate()) {
     try {
@@ -23,6 +32,8 @@ if ($f->validate()) {
 
     echo '<div class = "container">';
     $tpl->displayForm($f);
+
+    $tpl->display('register.tpl');
     echo '</div>';
 }
 
