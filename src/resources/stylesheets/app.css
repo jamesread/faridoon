@@ -216,6 +216,38 @@ nav li a:hover {
   }
 }
 
+.usernameColor1 {
+  color: #D93989;
+}
+
+.usernameColor2 {
+  color: #3399FF;
+}
+
+.usernameColor3 {
+  color: green;
+}
+
+.usernameColor4 {
+  color: orange;
+}
+
+.usernameColor5 {
+  color: #FF00FF;
+}
+
+.usernameColor6 {
+  color: #FF6600;
+}
+
+.usernameColor7 {
+  color: #FFCC00;
+}
+
+.usernameColor8 {
+  color: #00CC00;
+}
+
 @media screen and (max-width: 640px) {
   #content, #footer, body {
     width: auto;

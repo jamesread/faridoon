@@ -13,9 +13,7 @@ class Quote
 
     private $rawContent;
 
-    private static $colors = array(
-        '#CC0066', '#3399FF', 'green', 'orange'
-    );
+    private $colorIndex = 1;
 
     private $usernameColors = array();
 
@@ -25,8 +23,9 @@ class Quote
             return $this->usernameColors[$username];
         }
 
-        $col = current(self::$colors);
-        next(self::$colors);
+        $col = $this->colorIndex;
+
+        $this->colorIndex++;
 
         $this->usernameColors[$username] = $col;
 
@@ -81,8 +80,7 @@ class Quote
 
     private function findUsernames()
     {
-        reset(self::$colors);
-
+        $this->colorIndex = 1;
         $this->usernameColors = [];
 
         foreach ($this->lines as &$line) {

@@ -28,7 +28,7 @@
 			{foreach $quote->lines as $line}
 				<span class = "line">
 				{if isset($line.username)}
-					<span class = "username" style = "color: {$line.usernameColor}">{$line.username}</span>:
+					<span class = "username usernameColor{$line.usernameColor}">{$line.username}</span>:
 				{/if}
 				{$line.content}
 				</span>
