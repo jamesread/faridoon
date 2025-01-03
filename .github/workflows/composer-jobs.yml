@@ -4,8 +4,18 @@ name: PHP CodeStyle
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "/*.xml"
+      - "composer.json"
+
   pull_request:
     branches: ["main"]
+    paths:
+      - "src/**"
+      - "/*.xml"
+      - "composer.json"
+
 
 permissions:
   contents: read
