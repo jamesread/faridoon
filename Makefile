@@ -21,11 +21,12 @@ dist: clean
 clean:
 	rm -rf build
 
-container:
-	mkdir -p /tmp/dockerConfig
+container-image:
 	docker kill faridoon || true
 	docker rm faridoon && docker rmi faridoon || true
 	docker build -t faridoon:latest .
+
+container: container-image
 	docker create --name faridoon -p 8080:8080 --env-file=.env.dev faridoon:latest
 	docker start faridoon
 
