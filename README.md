@@ -1,22 +1,22 @@
-# Faridoon
+<div align = "center">
+  <img alt = "project logo" src = "faridoon.png" />
+  <h1>Faridoon</h1>
 
-<img alt = "project logo" src = "faridoon.png" align =  "right" />
-
-Easily save and publish your favourite chat quotes for others to see.
+  Easily save and publish your favourite chat quotes for others to see.
 
 [![Build Tag](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml/badge.svg)](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml) [![Discord](https://img.shields.io/discord/846737624960860180?label=Discord%20Server)](https://discord.gg/jhYWWpNJ3v)
 
+</div>
 
-## Use cases
+## Screenshots 
 
-* Save your favourite quotes from chats and publish them for other people to see
-* That's it!
+Note the screenshots below contain quotes from the site that inspired this self hosted project - bash.org - which is now offline. There are several mirrors available via search engines. These quotes were used because they've been shared wildly for over 2 decades, and they're pretty funny :-) 
 
 ![Faridoon Screenshot](var/screenshot.png)
 
 ## Getting Started
 
-Documentation is available at: https://jamesread.github.io/faridoon/ , the recommended installation method is via Docker, connected to a MySQL Database.
+Documentation is available at: https://jamesread.github.io/faridoon/ , the recommended installation method is via **Docker**, connected to a **MySQL Database**. Faridoon runs just fine with low system resources - 1 vCPU and a 1 GB of RAM is plenty. 
 
 ## Features
 
