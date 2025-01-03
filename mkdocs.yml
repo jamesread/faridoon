@@ -3,6 +3,7 @@ site_name: Faridoon Docs
 site_description: Documentation for Faridoon.
 repo_url: https://github.com/jamesread/faridoon
 repo_name: jamesread/faridoon
+strict: true
 
 markdown_extensions:
   - codehilite
@@ -15,7 +16,7 @@ theme:
   include_search_page: true
   search_index_only: true
   palette:
-    primary: 'deep purple'
+    primary: deep purple
   features:
     - search.suggest
     - search.highlight

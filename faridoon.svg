@@ -7,6 +7,9 @@
    id="svg1"
    sodipodi:docname="faridoon.svg"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:export-filename="faridoon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,31 +27,21 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="24.954977"
      inkscape:cx="10.238439"
-     inkscape:cy="6.9925931"
+     inkscape:cy="8.4351911"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="1280"
      inkscape:window-y="1104"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
-  <rect
-     style="fill:#9d266b;fill-opacity:1;stroke:#60d455;stroke-width:11.0377;stroke-opacity:1"
+  <path
+     style="fill:#6f2c82;fill-opacity:1;stroke:none;stroke-width:46.6779"
+     d="M 3.103659,4.0860383 20,3.044162 c 0,0 2,13.443759 0,15.545838 C 17.383119,17.232232 3.857939,17.774112 3.857939,17.774112 Z"
      id="rect2"
-     width="6.9651794"
-     height="1.5364493"
-     x="8.5174103"
-     y="9.4635506" />
-  <rect
-     style="fill:none;fill-opacity:1;stroke:#60d455;stroke-width:2.06931;stroke-opacity:1"
-     id="rect2-6"
-     width="0.69485819"
-     height="0.54131186"
-     x="18.855"
-     y="-17.710655"
-     transform="scale(1,-1)" />
+     sodipodi:nodetypes="ccccc" />
   <path
      fill="currentColor"
      d="M17 7H7a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2m0 4H7a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2m2-9H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11.59l3.7 3.71A1 1 0 0 0 21 22a.84.84 0 0 0 .38-.08A1 1 0 0 0 22 21V5a3 3 0 0 0-3-3m1 16.59l-2.29-2.3A1 1 0 0 0 17 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"
      id="path1"
-     style="fill:#ffffff;fill-opacity:1" />
+     style="fill:#000000;fill-opacity:1" />
 </svg>
