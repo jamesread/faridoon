@@ -3,7 +3,7 @@
 require_once 'includes/widgets/header.php';
 
 if (!isAdmin()) {
-    throw new PermissionsException();
+    throw new Exception('No permissions');
 }
 
 $sql = 'DELETE FROM quotes WHERE id = :id LIMIT 1';

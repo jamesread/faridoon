@@ -1,7 +1,6 @@
 <?php
 
 require_once 'includes/common.php';
-require_once 'libAllure/util/shortcuts.php';
 
 use libAllure\Session;
 use libAllure\DatabaseFactory;
@@ -9,8 +8,8 @@ use libAllure\DatabaseFactory;
 $cause = "";
 
 try {
-    $dir = san()->filterString('dir');
-    $id = san()->filterUint('id');
+    $dir = libAllure\Shortcuts::san()->filterString('dir');
+    $id = libAllure\Shortcuts::san()->filterUint('id');
 
     switch ($dir) {
         case 'up':

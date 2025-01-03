@@ -1,7 +1,6 @@
 <?php
 
 require_once 'includes/widgets/header.php';
-require_once 'includes/classes/model/Quote.php';
 
 if (!isAdmin()) {
     echo '<p class = "bad">You are no admin that I know of. Go away.</p>';
@@ -28,7 +27,7 @@ $tpl->assign('count', count($quotes));
 $tpl->display('approveHeader.tpl');
 
 foreach ($quotes as $dbquote) {
-    $quote = new Quote();
+    $quote = new faridoon\Quote();
     $quote->unmarshalFromDatabase($dbquote);
 
     include 'includes/widgets/quote.php';

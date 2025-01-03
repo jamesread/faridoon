@@ -16,17 +16,17 @@ class Quote
         '#CC0066', '#3399FF', 'green', 'orange'
     );
 
-    private $usernameColors = array();
+    private static $usernameColors = array();
 
-    private function getUsernameColor($username)
+    private static function getUsernameColor($username)
     {
-        if (isset($this->usernameColors[$username])) {
-            return $this->usernameColors[$username];
+        if (isset(self::$usernameColors[$username])) {
+            return self::$usernameColors[$username];
         }
 
-        $col = current(self:$colors);
+        $col = current(self::$colors);
         next(self::$colors);
-        $this->usernameColors[$username] = $col;
+        self::$usernameColors[$username] = $col;
 
         return $col;
     }
@@ -73,6 +73,8 @@ class Quote
     {
         reset(self::$colors);
 
+        self::$usernameColors = array();
+
         foreach ($quoteContent as &$line) {
             $regex = '#^[\]\[\(\)\:\d ]*<?[&+@~]{0,1}([\w\- ]+)[:>] (.*)#i';
 
@@ -88,7 +90,7 @@ class Quote
                     }
 
                     $line['username'] = $matches[1];
-                    $line['usernameColor'] = getUsernameColor($line['username']);
+                    $line['usernameColor'] = self::getUsernameColor($line['username']);
                     $line['content'] = htmlentities($matches[2]);
 
                     break;

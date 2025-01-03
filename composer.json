@@ -1,5 +1,7 @@
 {
     "name": "jamesread/faridoon",
+	"description": "Easily save and publish your favourite chat quotes for others to see.",
+	"license": "AGPL-3.0-only",
     "type": "project",
     "require": {
         "jwread/lib-allure": "^8",
@@ -7,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jamesread\\Faridoon\\": "src/"
+            "faridoon\\": "src/includes/classes/"
         }
     },
     "authors": [

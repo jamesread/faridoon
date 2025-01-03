@@ -1,7 +1,8 @@
 <?php
 
 require_once 'includes/widgets/header.php';
-require_once 'includes/classes/FormQuote.php';
+
+use faridoon\FormQuote;
 
 $sql = 'SELECT id, content, syntaxHighlighting FROM quotes WHERE id = :itemId LIMIT 1';
 $stmt = $db->prepare($sql);

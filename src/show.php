@@ -1,7 +1,8 @@
 <?php
 
 require_once 'includes/widgets/header.php';
-require_once 'includes/classes/model/Quote.php';
+
+use faridoon\Quote;
 
 $id = filter('id');
 $sql = 'SELECT q.id, q.content, q.created, q.approval as approved, q.syntaxHighlighting, COALESCE(SUM(v.delta), 0) AS voteCount FROM quotes q LEFT JOIN votes v ON v.quote = q.id WHERE q.id = :id ORDER BY q.id LIMIT 1';

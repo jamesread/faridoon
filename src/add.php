@@ -1,9 +1,8 @@
 <?php
 
 require_once 'includes/widgets/header.php';
-require_once 'includes/classes/FormQuote.php';
 
-$f = new FormQuote();
+$f = new faridoon\FormQuote();
 
 if ($f->validate()) {
     $f->process();
