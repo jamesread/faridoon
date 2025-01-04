@@ -8,14 +8,42 @@
    sodipodi:docname="faridoon.svg"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    inkscape:export-filename="faridoon.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
+   inkscape:export-xdpi="289.81"
+   inkscape:export-ydpi="289.81"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1">faridoon icon</title>
   <defs
-     id="defs1" />
+     id="defs1">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#bf1fff;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#1d002f;stop-opacity:1;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="12"
+       y1="1.400141"
+       x2="12"
+       y2="22.600142"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -25,23 +53,70 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="24.954977"
-     inkscape:cx="10.238439"
-     inkscape:cy="6.9925931"
+     inkscape:zoom="32.000001"
+     inkscape:cx="8.4062496"
+     inkscape:cy="14.671874"
      inkscape:window-width="1920"
      inkscape:window-height="1056"
      inkscape:window-x="1280"
      inkscape:window-y="1104"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
-  <path
-     style="fill:#6f2c82;fill-opacity:1;stroke:none;stroke-width:46.6779"
-     d="M 2.4625042,2.6033679 21.48267,2.843801 c 0,0 1.9994,14.865432 -0.321177,16.727078 C 18.578181,16.976287 3.0564954,17.052813 3.0564954,17.052813 Z"
-     id="rect2"
-     sodipodi:nodetypes="ccccc" />
+     inkscape:current-layer="svg1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#3f3fff"
+       empopacity="0.25098039"
+       color="#000000"
+       opacity="0.15294118"
+       empspacing="5"
+       enabled="true"
+       visible="true"
+       dotted="false" />
+  </sodipodi:namedview>
   <path
      fill="currentColor"
-     d="M 17.777242,6.49639 H 6.4964059 a 1.1280836,1.1280836 0 0 0 0,2.2561671 H 17.777242 a 1.1280836,1.1280836 0 0 0 0,-2.2561671 m 0,4.512334 H 6.4964059 a 1.128084,1.128084 0 0 0 0,2.256168 H 17.777242 a 1.128084,1.128084 0 0 0 0,-2.256168 M 20.033409,0.85597209 H 4.2402387 A 3.3842507,3.3842507 0 0 0 0.85598803,4.2402228 V 15.521059 A 3.3842507,3.3842507 0 0 0 4.2402387,18.90531 H 17.314728 l 4.173909,4.185189 a 1.1280836,1.1280836 0 0 0 0.800939,0.327145 0.9475902,0.9475902 0 0 0 0.428672,-0.09025 1.1280836,1.1280836 0 0 0 0.699412,-1.037836 V 4.2402228 A 3.3842507,3.3842507 0 0 0 20.033409,0.85597209 M 21.161493,19.570879 18.578181,16.976287 A 1.1280836,1.1280836 0 0 0 17.777242,16.649142 H 4.2402387 A 1.1280836,1.1280836 0 0 1 3.1121552,15.521059 V 4.2402228 A 1.1280836,1.1280836 0 0 1 4.2402387,3.1121393 H 20.033409 a 1.1280836,1.1280836 0 0 1 1.128084,1.1280835 z"
+     d="M 19,5 H 5 C 3.3431458,5 2,6.3431459 2,8 v 8 c 0,1.656853 1.3431458,3 3,3 h 14 c 3.03125,2.359375 0,0 3,2.390625 0,-1 -0.002,-2.594379 0,-2.998081 V 8 C 22,6.3431458 21.211541,5 19.554687,5"
      id="path1"
-     style="fill:#ffffff;fill-opacity:1;stroke-width:1.12808" />
+     style="fill:url(#linearGradient4);fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+     sodipodi:nodetypes="csssscccsc" />
+  <path
+     fill="currentColor"
+     d="m 8,13.4 c 0,0 1.0006245,2.061212 4,2 3.0625,-0.0625 4,-2 4,-2"
+     id="path1-5-2"
+     style="display:inline;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:5.6;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+     sodipodi:nodetypes="csc" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.749999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+     id="path2"
+     cx="8.5"
+     cy="9"
+     ry="1.5000001"
+     rx="1.5" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.749999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+     id="path2-7"
+     cx="15.5"
+     cy="9"
+     ry="1.5000001"
+     rx="1.4999999" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>faridoon icon</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>jamesread</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
 </svg>
