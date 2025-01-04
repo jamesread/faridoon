@@ -98,6 +98,7 @@ header {
   width: 1.4em;
   height: 1.4em;
   vertical-align: bottom;
+  fill: red;
 }
 
 div.pagination {
@@ -208,11 +209,15 @@ nav li a:hover {
   }
 
   a, a:visited {
-    color: #ddd;
+    color: #ccc;
   }
 
   a:hover {
     color: #fff;
+  }
+
+  form {
+    background-color: #6a6a6a;
   }
 }
 

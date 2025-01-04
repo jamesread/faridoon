@@ -14,11 +14,30 @@
 
 			{if isAdmin()}
 			<ul class = "adminLinks">
-				<li><a href = "edit.php?id={$quote->id}"><img class = "svg-icon" src = "resources/svg/edit.svg" title = "Edit quote" /></a></li>
-				<li><a href = "delete.php?id={$quote->id}"><img class = "svg-icon" src = "resources/svg/delete.svg" title = "Delete quote" /></a></li>
 				{if !$quote->approved}
-				<li><a href = "approvals.php?approveId={$quote->id}">approve</a></li>
+				<li>
+					<a href = "approvals.php?approveId={$quote->id}">
+						<svg class = "svg-icon">
+							<use xlink:href = "#svg-approve" />
+						</svg>
+					</a>
+				</li>
 				{/if}
+
+				<li>
+					<a href = "edit.php?id={$quote->id}" title = "Edit quote">
+						<svg class = "svg-icon">
+							<use xlink:href = "#svg-edit" />
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href = "delete.php?id={$quote->id}" title = "Delete quote">
+						<svg class = "svg-icon">
+							<use xlink:href = "#svg-delete" />
+						</svg>
+					</a>
+				</li>
 			</ul>
 			{/if}
 		</div>
