@@ -9,6 +9,9 @@ on:
 jobs:
   build-tag:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,10 +34,10 @@ jobs:
         run: make docker-container-image
 
       - name: docker tag latest
-        run: docker tag localhost/faridoon/faridoon:latest ghcr.io/jamesread/faridoon:${{ github.ref_name }}
+        run: docker tag localhost/faridoon/faridoon:latest ghcr.io/jamesread/faridoon:${{ github.ref_name }}-${{ matrix.arch }}
 
       - name: docker push latest
-        run: docker push ghcr.io/jamesread/faridoon:${{ github.ref_name }}
+        run: docker push ghcr.io/jamesread/faridoon:${{ github.ref_name }}-${{ matrix.arch }}
 
       - name: docker tag refname
         run: docker tag localhost/faridoon/faridoon:latest ghcr.io/jamesread/faridoon:latest
@@ -42,3 +45,32 @@ jobs:
       - name: docker push refname
         run: docker push ghcr.io/jamesread/faridoon:latest
 
+
+  build-docker-manifest:
+    steps:
+
+      - name: Login to ghcr
+        uses: docker/login-action@v3.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Docker Manifest
+        run: |
+          docker manifest create \
+            ghcr.io/jamesread/faridoon:latest \
+            ghcr.io/jamesread/faridoon:${{ github.ref_name }}-amd64 \
+            ghcr.io/jamesread/faridoon:${{ github.ref_name }}-arm64
+
+          docker manifest annotate \
+            ghcr.io/jamesread/faridoon:latest \
+            ghcr.io/jamesread/faridoon:${{ github.ref_name }}-amd64 \
+            --os linux --arch amd64
+
+          docker manifest annotate \
+            ghcr.io/jamesread/faridoon:latest \
+            ghcr.io/jamesread/faridoon:${{ github.ref_name }}-arm64 \
+            --os linux --arch arm64
+
+          docker manifest push ghcr.io/jamesread/faridoon:latest
