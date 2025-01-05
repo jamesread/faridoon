@@ -41,8 +41,9 @@
 
 					{if $isAdmin}
 						<li>
-							<a href = "approvals.php">Approvals</a>
-							({$countApprovals})
+							<a href = "approvals.php">
+								Approvals	({$countApprovals})
+							</a>
 						</li>
 					{/if}
                 {else}
@@ -52,5 +53,25 @@
                 <li class = "right"><a href = "add.php">Add</a></li>
             </ul>
         </nav>
+
+		<button id = "navigation-toggle" aria-label = "Open Sidebar Navigation" title = "Open Sidebar Navigation" aria-pressed = "false" aria-haspopup = "menu">&#9776;</button>
+
+		<script type = "text/javascript">
+		const button = document.getElementById("navigation-toggle");
+
+		button.addEventListener("click", function() {
+			var navigation = document.querySelector("nav");
+
+			if (navigation.classList.contains('open')) {
+				navigation.classList.remove('open');
+				button.setAttribute("aria-pressed", "false");
+				button.setAttribute("title", "Open Sidebar Navigation");
+			} else {
+				navigation.classList.add('open')
+				button.setAttribute("aria-pressed", "true");
+				button.setAttribute("title", "Close Sidebar Navigation");
+			}
+		});
+		</script>
     </header>
     <main>

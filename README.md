@@ -12,7 +12,9 @@
 
 Note the screenshots below contain quotes from the site that inspired this self hosted project - bash.org - which is now offline. There are several mirrors available via search engines. These quotes were used because they've been shared wildly for over 2 decades, and they're pretty funny :-) 
 
-![Faridoon Screenshot](var/screenshot.png)
+![Faridoon Mobile Phone Screenshot](var/mockupLaptop.png)
+
+![Faridoon Desktop Screenshot](var/mockupMobilePhone.png)
 
 ## Getting Started
 

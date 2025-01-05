@@ -253,6 +253,19 @@ nav li a:hover {
   color: #00CC00;
 }
 
+#navigation-toggle {
+  display: none;
+  color: white;
+  background-color: #5f1a99;
+  border: 0;
+  box-shadow: 0;
+  font-size: 1.4em;
+  padding: 0;
+  padding-left: .4em;
+  padding-right: .4em;
+  margin: 0;
+}
+
 @media screen and (max-width: 640px) {
   #content, #footer, body {
     width: auto;
@@ -261,6 +274,8 @@ nav li a:hover {
   h1 {
     margin-top: 0;
     border-radius: 0;
+    flex-grow: 1;
+    text-align: right;
   }
 
   div.navbar {
@@ -283,6 +298,52 @@ nav li a:hover {
     display: block;
     padding: 0;
     text-align: center;
+  }
+
+  #navigation-toggle {
+    z-index: 9;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 180px;
+    height: 100vh;
+    left: 0;
+    flex-direction: column;
+    background-color: black;
+    padding-top: 4em;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  #navigation-toggle {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding-left: 1em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    border-radius: 0;
+  }
+
+  nav ul:first-child {
+    padding-bottom: 2em;
+    flex-grow: 0;
+  }
+
+  header {
+    flex-direction: row-reverse;
   }
 }
 
