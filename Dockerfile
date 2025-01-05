@@ -13,13 +13,13 @@ RUN docker-php-ext-configure pdo_mysql \
 
 EXPOSE 8080
 
-COPY src/ /var/Sicroc/src/
-COPY composer.json /var/Sicroc/
+COPY src/ /var/faridoon/src/
+COPY composer.json /var/faridoon/
 
-WORKDIR /var/Sicroc/
+WORKDIR /var/faridoon/
 
 RUN composer install --no-dev --no-suggest
-RUN rm -rf /var/www/html && ln -s /var/Sicroc/src/ /var/www/html
+RUN rm -rf /var/www/html && ln -s /var/faridoon/src/ /var/www/html
 
 #COPY config.dist.ini /config/config.ini
 
