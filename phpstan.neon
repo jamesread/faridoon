@@ -6,3 +6,4 @@ parameters:
 	ignoreErrors:
 		- '#might not be defined#'
 		- '#Path in require_once#'
+		- '#Path in include_once#'

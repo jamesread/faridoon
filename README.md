@@ -28,7 +28,7 @@ Documentation is available at: https://jamesread.github.io/faridoon/ , the recom
 * Approval system for guest and non-admin submissions.
 * Easy configuration via environment variables, or configuration file.
 
-### **Faridoon is a No-Nonsense Open Source project;**
+## **Faridoon is a No-Nonsense Open Source project;**
 
 - All code and assets are Open Source (AGPL).
 - No company is paying for development, there is no paid-for support from the developers.
