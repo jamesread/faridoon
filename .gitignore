@@ -1,5 +1,6 @@
 build
 **/*.swp
+**/*.swo
 site
 vendor/
-.env.dev
+/.env.dev
