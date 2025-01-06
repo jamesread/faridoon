@@ -3,15 +3,25 @@ site_name: Faridoon Docs
 site_description: Documentation for Faridoon.
 repo_url: https://github.com/jamesread/faridoon
 repo_name: jamesread/faridoon
+edit_uri: edit/main/docs
 strict: true
 
 markdown_extensions:
   - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - toc:
       permalink: true
 
 theme:
   name: material
+  logo: faridoon.png
+  favicon: faridoon.png
   language: en
   include_search_page: true
   search_index_only: true
@@ -21,6 +31,10 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
 
 
 plugins:
@@ -47,4 +61,5 @@ nav:
       - Introduction: installation/index.md
       - docker: installation/docker.md
       - docker-compose: installation/docker-compose.md
+      - Run database migrations: installation/migrations.md
   - Configuration: configuration/index.md

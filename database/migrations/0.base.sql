@@ -1,3 +1,5 @@
+-- +migrate Up
+
 -- MariaDB dump 10.19  Distrib 10.5.13-MariaDB, for Linux (x86_64)
 --
 -- Host: mysql    Database: faridoon
@@ -148,3 +150,5 @@ CREATE TABLE `votes` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-01-21 22:00:30
+
+-- +migrate Down
