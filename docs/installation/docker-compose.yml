@@ -31,6 +31,11 @@ services:
     restart: unless-stopped
     networks:
       - faridoon-network
+    healthcheck:
+      test: mysqladmin ping -h localhost
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   faridoon-config:
