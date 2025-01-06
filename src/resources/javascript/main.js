@@ -1,5 +1,12 @@
-function vote(id, dir)
-{
+function voteUp (id) {
+  return vote(id, 'up')
+}
+
+function voteDown (id) {
+  return vote(id, 'down')
+}
+
+function vote (id, dir) {
   window.fetch('vote.php', {
     method: 'POST',
     headers: {
@@ -13,17 +20,18 @@ function vote(id, dir)
     .then(response => response.json())
     .then(onVoteReply)
     .catch(onError)
+
+  return false // prevent default
 }
 
-function onError(res)
-{
+function onError (res) {
   console.log('err', res)
 
   document.querySelectorAll('p.error').forEach(function (el) {
     el.remove()
   })
 
-  if (typeof res.message != "undefined") {
+  if (typeof res.message !== 'undefined') {
     const p = document.createElement('p')
     p.classList.add('error')
     p.textContent = 'Error: ' + res.message
@@ -35,8 +43,7 @@ function onError(res)
   }
 }
 
-function onVoteReply(json)
-{
+function onVoteReply (json) {
   if (json.type === 'error') {
     if (json.cause === 'needsLogin') {
       window.location = 'login.php'

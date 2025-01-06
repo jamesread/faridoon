@@ -5,7 +5,7 @@ require_once 'includes/common.php';
 use libAllure\Session;
 use libAllure\DatabaseFactory;
 
-if (!$cfg->getBool('VOTING_ENABLED')) {
+if ($cfg->getBool('VOTING_ENABLED')) {
     outputJson(
         array(
         "type" => "error",
@@ -18,8 +18,11 @@ if (!$cfg->getBool('VOTING_ENABLED')) {
 $cause = "";
 
 try {
-    $dir = libAllure\Shortcuts::san()->filterString('dir');
-    $id = libAllure\Shortcuts::san()->filterUint('id');
+    $jsonData = file_get_contents('php://input');
+    $data = json_decode($jsonData, true);
+
+    $dir = $data['direction'];
+    $id = $data['id'];
 
     switch ($dir) {
         case 'up':
@@ -29,7 +32,7 @@ try {
             $delta = -1;
             break;
         default:
-            throw new Exception('What direction is that?!');
+            throw new Exception('What direction is that?! ');
     }
 
     if (!Session::isLoggedIn()) {
@@ -43,16 +46,13 @@ try {
         $stmt->execute();
 
         if ($stmt->numRows() > 0) {
-            $currentVote = $stmt->fetchRow();
-            $currentVote['delta'] = intval($currentVote['delta']);
+            $currentRow = $stmt->fetchRow();
 
-            $delta = $currentVote['delta'] + $delta;
-
-            if ($delta > 1) {
-                $delta = 1;
-            } elseif ($delta < -1) {
-                $delta = -1;
-            }
+            $sql = 'DELETE FROM votes WHERE quote = :quote AND user = :user';
+            $stmt = DatabaseFactory::getInstance()->prepare($sql);
+            $stmt->bindValue('quote', $id);
+            $stmt->bindValue('user', Session::getUser()->getId());
+            $stmt->execute();
         }
 
         $sql = 'INSERT INTO votes (quote, user, delta) VALUES (:quote, :user, :delta1) ON DUPLICATE KEY UPDATE delta = :delta2';

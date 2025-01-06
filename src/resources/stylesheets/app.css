@@ -34,6 +34,10 @@ section *:last-child {
   margin-bottom: 0;
 }
 
+.quoteContainer {
+  flex-grow: 1;
+}
+
 .quoteContainer ul {
   padding: 0;
   margin: 0;
@@ -121,6 +125,7 @@ div.container {
 
 section.quote {
   margin-bottom: 2.5em;
+  display: flex;
 }
 
 .quoteContainer {
@@ -136,16 +141,19 @@ div.voteContainer {
   min-width: 2em;
 }
 
-div.voteContainer a {
+div.voteContainer button {
   display: block;
   color: lightgray;
   cursor: pointer;
+  border: 0;
   font-size: 1.5em;
   text-decoration: none;
+  background-color: transparent;
 }
 
-div.voteContainer a:hover {
-  color: gray;
+div.voteContainer button:hover {
+  color: black;
+  background-color: transparent;
 }
 
 div.quoteHeader {

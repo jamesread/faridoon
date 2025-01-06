@@ -1,9 +1,9 @@
 <section id = "quote{$quote->id}" class = "quote">
 	{if $isVotingEnabled}
 	<div class = "voteContainer">
-		<a class = "voteButton" onclick = "voteUp({$quote->id})" class = "up">&#9650;</a>
+		<button class = "voteButton" onclick = "voteUp({$quote->id});">&#9650;</button>
 		<span class = "voteCount">{$quote->voteCount}</span>
-		<a class = "voteButton" onclick = "voteDown({$quote->id})" class = "up">&#9660;</a>
+		<button class = "voteButton" onclick = "voteDown({$quote->id});">&#9660;</button>
 	</div>
 	{/if}
 
