@@ -266,6 +266,15 @@ nav li a:hover {
   margin: 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: .5em;
+  border: 1px solid #999;
+}
+
 @media screen and (max-width: 640px) {
   #content, #footer, body {
     width: auto;

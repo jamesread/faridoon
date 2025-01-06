@@ -33,7 +33,7 @@ DatabaseFactory::registerInstance($db);
 
 require_once 'includes/startup.php';
 
-requireDatabaseVersion('0.base.sql');
+requireDatabaseVersion('1.groups.sql');
 
 require_once 'includes/functionality.php';
 
