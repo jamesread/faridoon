@@ -48,6 +48,6 @@ if (count($quotes) == 0) {
     }
 }
 
-pagingLinks($start, $page, $numPages);
+$navigable ? pagingLinks($start, $page, $numPages) : null;
 
 require_once 'includes/widgets/footer.php';
