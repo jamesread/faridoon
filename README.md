@@ -18,7 +18,7 @@ Note the screenshots below contain quotes from the site that inspired this self 
 
 ## Getting Started
 
-Documentation is available at: https://jamesread.github.io/faridoon/ , the recommended installation method is via **Docker**, connected to a **MySQL Database**. Faridoon runs just fine with low system resources - 1 vCPU and a 1 GB of RAM is plenty. 
+Documentation is available at: https://jamesread.github.io/Faridoon/ , the recommended installation method is via **Docker**, connected to a **MySQL Database**. Faridoon runs just fine with low system resources - 1 vCPU and a 1 GB of RAM is plenty. 
 
 ## Features
 
