@@ -1,8 +1,10 @@
 ## Database Migrations
 
-Faridoon does not automatically apply database upgrades (called "migrations" in database terminology), and it does not install the initial database for you. This means you must run this step on *installation* and when asked to do so after an *upgrade*.
+Faridoon automatically applies database upgrades (called "migrations" in database terminology) every time the container starts. If there are no changes to be made, the startup just continues. 
 
-However, ruinning migrations is easy. You will need to get a shell on the `faridoon` container. You can do this like this;
+Therefore, it should not be necessary to run migrations manually. However, if you would like to do so, the instructions are below for how to do this.
+
+However, running migrations is easy. You will need to get a shell on the `faridoon` container. You can do this like this;
 
 ``` bash
 docker exec -it faridoon /bin/bash

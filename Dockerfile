@@ -21,6 +21,8 @@ WORKDIR /var/faridoon/
 RUN composer install --no-dev --no-suggest
 RUN rm -rf /var/www/html && ln -s /var/faridoon/src/ /var/www/html
 
+RUN sed -i '3i cd /var/faridoon/database/ && sql-migrate up' /usr/local/bin/docker-php-entrypoint
+
 #COPY config.dist.ini /config/config.ini
 
 VOLUME ["/config"]

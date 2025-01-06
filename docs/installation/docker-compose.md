@@ -13,5 +13,3 @@ docs/installation/docker-compose.yml
 Change your environment variables as necessary to set your passwords (`DB_PASS` should be the same as `MYSQL_PASSWORD`. `DB_USER` should be the same as `MYSQL_USER`, etc).
 
 Save this file as `docker-compose.yml` and run `docker-compose up -d` in the same directory. Faridoon will be available at `http://localhost:8080`.
-
-Before you can use Faridoon though, you must [run the database migrations](migrations.md).
