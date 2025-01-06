@@ -56,10 +56,10 @@ extra:
 
 nav:
   - Welcome: index.md
-  - Getting Started: gettingStarted.md
   - Installation:
       - Introduction: installation/index.md
-      - docker: installation/docker.md
-      - docker-compose: installation/docker-compose.md
+      - Docker Compose (recommended): installation/docker-compose.md
+      - Docker standalone: installation/docker.md
       - Run database migrations: installation/migrations.md
   - Configuration: configuration/index.md
+  - "Contact & Support": contact-support.md
