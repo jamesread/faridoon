@@ -47,7 +47,9 @@
 						</li>
 					{/if}
                 {else}
-                    <li><a href = "login.php">Login</a></li>
+					{if $isRegistrationEnabled}
+						<li><a href = "login.php">Login</a></li>
+					{/if}
                 {/if}
 
                 <li class = "right"><a href = "add.php">Add</a></li>

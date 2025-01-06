@@ -2,6 +2,15 @@
 
 require_once 'includes/common.php';
 
+if ($cfg->getBool('DISABLE_REGISTRATION')) {
+    require_once 'includes/widgets/header.php';
+
+    echo '<section>Registration is disabled.</section>';
+
+    include_once 'includes/widgets/footer.php';
+    exit;
+}
+
 use libAllure\util\FormRegister;
 
 $f = new FormRegister();

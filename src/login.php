@@ -30,11 +30,11 @@ if ($f->validate()) {
 } else {
     include_once 'includes/widgets/header.php';
 
-    echo '<div class = "container">';
     $tpl->displayForm($f);
 
-    $tpl->display('register.tpl');
-    echo '</div>';
+    if (!$cfg->getBool('DISABLE_REGISTRATION')) {
+        $tpl->display('register.tpl');
+    }
 }
 
 require_once 'includes/widgets/footer.php';
