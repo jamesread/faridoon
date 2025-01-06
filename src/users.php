@@ -4,10 +4,7 @@ require_once 'includes/widgets/header.php';
 
 use libAllure\Session;
 
-if (!isAdmin()) {
-    header('location: index.php');
-    exit;
-}
+requireAdmin();
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];

@@ -38,7 +38,7 @@ $numPages = ceil($foundRows / $limit);
 $navigable ? pagingLinks($start, $page, $numPages) : null;
 
 if (count($quotes) == 0) {
-    echo '<section><h2>Uh-oh</h2><p>Nobody has posted anything yet.</p></section>';
+    echo '<section><h2>This page intentionally left blank...?</h2><p>There are no quotes in the database... yet. Click "Add" in the navigation to be the first!</p></section>';
 } else {
     foreach ($quotes as $dbquote) {
         $quote = new Quote();

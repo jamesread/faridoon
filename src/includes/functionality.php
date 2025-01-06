@@ -59,22 +59,24 @@ function isAdmin()
 
 function pagingLinks($start, $page, $numPages)
 {
-    echo '<div class = "pagination">';
-    if ($start > 0) {
-        echo '<a href = "list.php?page=' . ($page - 1) . '">&laquo; prev</a> ';
-    } else {
-        echo '&laquo; prev';
-    }
+    if ($numPages > 0) {
+        echo '<div class = "pagination">';
+        if ($start > 0) {
+            echo '<a href = "list.php?page=' . ($page - 1) . '">&laquo; prev</a> ';
+        } else {
+            echo '&laquo; prev';
+        }
 
-    if ($page == $numPages - 1) {
-        echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
-        echo 'next &raquo;';
-    } else {
-        echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
-        echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
-    }
+        if ($page == $numPages - 1) {
+            echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
+            echo 'next &raquo;';
+        } else {
+            echo '<span class = "currentPage">' . ($page + 1) . '</span> of <span class = "currentPage">' . ($numPages) . '</span> ';
+            echo '<a href = "list.php?page=' . ($page + 1) . '">next &raquo;</a>';
+        }
 
-    echo '</div>';
+        echo '</div>';
+    }
 }
 
 function getCustomCss()
@@ -107,4 +109,17 @@ function getCountApprovals()
     $countNew = intval($countNew);
 
     return $countNew;
+}
+
+function requireAdmin()
+{
+    if (!isAdmin()) {
+        echo '<section class = "severe">';
+        echo '<h2>Permission denied</h2>';
+        echo '<p>You are no admin that I know of. Go away.</p>';
+        echo '</section>';
+        include_once 'includes/widgets/footer.php';
+
+        exit;
+    }
 }
