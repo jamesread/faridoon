@@ -198,10 +198,37 @@ nav li a:hover {
   background-color: #3a0b62;
 }
 
+ul.block-links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  gap: 1em;
+}
+
+ul.block-links a {
+  padding: 1em;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: 0 0 .5em #d2d2d2;
+}
+
+ul.block-links a:hover {
+  background-color: #3a0b62;
+  color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #333;
     color: #ddd;
+  }
+
+  ul.block-links a {
+    border: 1px solid #666;
+    box-shadow: 0 0 .5em #1c1c1c;
   }
 
   section {

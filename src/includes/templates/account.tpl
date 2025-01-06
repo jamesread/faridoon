@@ -5,8 +5,16 @@
 
 	{if $isAdmin}
 	<h2>Admin links</h2>
-	<ul>
-		<li><a href = "approvals.php">Approvals</a></li>
+	<ul class = "block-links">
+		<li>
+			<a href = "approvals.php">
+				<svg class = "svg-icon">
+					<use xlink:href = "#svg-approve" />
+				</svg>
+
+				Approvals
+			</a>
+		</li>
 		<li><a href = "users.php">Users</a></li>
 	</ul>
 	{/if}
