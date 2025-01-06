@@ -5,3 +5,5 @@ Welcome! Faridoon is a web app to publish your favourite chat quotes. This is th
 You can learn more about Faridoon on it's GitHub site; [jamesread/Faridoon](https://github.com/jamesread/Faridoon).
 
 * [Docker Compose](installation/docker-compose.md) - this is the preferred way to run Faridoon.
+
+If you need help understanding something that is not documented, or just need other help with Faridoon, please check the [contact & support](contact-support.md) page.
