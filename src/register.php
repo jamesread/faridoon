@@ -14,6 +14,8 @@ if ($cfg->getBool('DISABLE_REGISTRATION')) {
 use libAllure\util\FormRegister;
 
 $f = new FormRegister();
+$f->setTitle('Register as a new user');
+$f->getElement('submit')->setCaption('Register user');
 
 if ($f->validate()) {
     $f->process();
@@ -51,10 +53,7 @@ if ($f->validate()) {
 } else {
     include_once 'includes/widgets/header.php';
 
-    echo '<div class = "container">';
-
     $tpl->displayForm($f);
 
-    echo '</div>';
     include_once 'includes/widgets/footer.php';
 }
