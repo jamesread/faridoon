@@ -38,7 +38,7 @@ if (isset($_GET['demote'])) {
     exit;
 }
 
-$sql = "SELECT u.id, u.username, u.`group`, g.title AS  groupTitle FROM users u LEFT JOIN groups g ON u.`group` = g.id";
+$sql = "SELECT u.id, u.username, u.`group`, g.title AS  groupTitle FROM users u LEFT JOIN `groups` g ON u.`group` = g.id";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
