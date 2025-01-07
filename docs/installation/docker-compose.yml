@@ -21,7 +21,7 @@ services:
       faridoon-mysql:
         condition: service_healthy
 
-  mysql:
+  faridoon-mysql:
     container_name: faridoon-mysql
     image: mysql
     volumes:
@@ -35,7 +35,7 @@ services:
     networks:
       - faridoon-network
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost ${MYSQL_DATABASE}"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
       interval: 20s
       timeout: 5s
       retries: 10
