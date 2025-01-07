@@ -8,6 +8,8 @@
 
 </div>
 
+Documentation for how to install and use Faridoon is available at https://jamesread.github.io/Faridoon/
+
 ## Screenshots 
 
 Note the screenshots below contain quotes from the site that inspired this self hosted project - bash.org - which is now offline. There are several mirrors available via search engines. These quotes were used because they've been shared wildly for over 2 decades, and they're pretty funny :-) 
@@ -39,3 +41,6 @@ Documentation is available at: https://jamesread.github.io/Faridoon/ , the recom
 - No prompts to "upgrade to the latest version".
 - No internet-connection required for any functionality.
 
+## Docs
+
+Documentation for how to install and use Faridoon is available at https://jamesread.github.io/Faridoon/
