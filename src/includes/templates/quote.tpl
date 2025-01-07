@@ -16,8 +16,8 @@
 			<ul class = "adminLinks">
 				{if !$quote->approved}
 				<li>
-					<a href = "approvals.php?approveId={$quote->id}">
-						<svg class = "svg-icon">
+					<a href = "approvals.php?approveId={$quote->id}" title = "Approve quote">
+						<svg class = "svg-icon" viewBox = "0 0 24 24" alt = "Approval icon">
 							<use xlink:href = "#svg-approve" />
 						</svg>
 					</a>
@@ -26,15 +26,15 @@
 
 				<li>
 					<a href = "edit.php?id={$quote->id}" title = "Edit quote">
-						<svg class = "svg-icon">
+						<svg class = "svg-icon" viewBox = "0 0 24 24" alt = "Edit icon">
 							<use xlink:href = "#svg-edit" />
 						</svg>
 					</a>
 				</li>
 				<li>
 					<a href = "delete.php?id={$quote->id}" title = "Delete quote">
-						<svg class = "svg-icon">
-							<use xlink:href = "#svg-delete" />
+						<svg class = "svg-icon" viewBox = "0 0 24 24" alt = "Delete icon">
+							<use xlink:href = "#svg-delete" alt = "Delete icon" />
 						</svg>
 					</a>
 				</li>

@@ -83,6 +83,10 @@ a, a:visited {
   text-decoration: none;
 }
 
+a:hover .svg-icon {
+  color: white;
+}
+
 header a, header a:visited {
   color: white;
 }
@@ -164,6 +168,15 @@ div.quoteHeader {
 div.quoteHeader .adminLinks {
   flex-grow: 2;
   text-align: end;
+}
+
+div.quoteHeader ul.adminLinks a .svg-icon {
+  padding: .2em;
+  border-radius: 2em;
+}
+
+div.quoteHeader ul.adminLinks a:hover .svg-icon {
+  background-color: #5f1a99;
 }
 
 span.voteCount.novotes {
