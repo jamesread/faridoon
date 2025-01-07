@@ -6,9 +6,9 @@
 
 [![Build Tag](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml/badge.svg)](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml) [![Discord](https://img.shields.io/discord/846737624960860180?label=Discord%20Server)](https://discord.gg/jhYWWpNJ3v)
 
-</div>
-
 Documentation for how to install and use Faridoon is available at https://jamesread.github.io/Faridoon/
+
+</div>
 
 ## Screenshots 
 
