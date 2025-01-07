@@ -2,7 +2,7 @@
 name: faridoon
 
 services:
-  olivetin:
+  faridoon:
     container_name: faridoon
     image: ghcr.io/jamesread/faridoon
     volumes:
@@ -17,6 +17,9 @@ services:
     restart: unless-stopped
     networks:
       - faridoon-network
+    depends_on:
+      faridoon-mysql:
+        condition: service_healthy
 
   mysql:
     container_name: faridoon-mysql
@@ -32,10 +35,10 @@ services:
     networks:
       - faridoon-network
     healthcheck:
-      test: mysqladmin ping -h localhost
-      interval: 10s
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost ${MYSQL_DATABASE}"]
+      interval: 20s
       timeout: 5s
-      retries: 5
+      retries: 10
 
 volumes:
   faridoon-config:
