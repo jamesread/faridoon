@@ -1,8 +1,8 @@
 ---
 site_name: Faridoon Docs
 site_description: Documentation for Faridoon.
-repo_url: https://github.com/jamesread/faridoon
-repo_name: jamesread/faridoon
+repo_url: https://github.com/jamesread/Faridoon
+repo_name: jamesread/Faridoon
 edit_uri: edit/main/docs
 strict: true
 
