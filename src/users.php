@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/widgets/header.php';
+require_once 'includes/common.php';
 
 use libAllure\Session;
 
@@ -44,6 +44,8 @@ if (isset($_GET['revokePermission'])) {
     redirect('users.php');
 }
 
+require_once 'includes/widgets/header.php';
+
 $sql = "SELECT u.id, u.username, u.`group`, g.title AS  groupTitle FROM users u LEFT JOIN `groups` g ON u.`group` = g.id";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -52,7 +54,6 @@ $users = $stmt->fetchAll();
 
 $tpl->assign('currentUid', Session::getUser()->getId());
 $tpl->assign('users', $users);
-
 
 $sql = 'SELECT g.id, g.title FROM `groups` g';
 $stmt = $db->prepare($sql);
