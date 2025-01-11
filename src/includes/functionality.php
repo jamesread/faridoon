@@ -114,11 +114,7 @@ function getCountApprovals()
 function requireAdmin()
 {
     if (!isAdmin()) {
-        echo '<section class = "severe">';
-        echo '<h2>Permission denied</h2>';
-        echo '<p>You are no admin that I know of. Go away.</p>';
-        echo '</section>';
-        include_once 'includes/widgets/footer.php';
+        simpleFatalError('You are not an admin.');
 
         exit;
     }
@@ -126,8 +122,10 @@ function requireAdmin()
 
 function simpleFatalError($message)
 {
+    require_once 'includes/widgets/header.php';
+
     echo '<section class = "severe">';
-    echo '<h2>Permission Denied</h2>';
+    echo '<h2>Error</h2>';
     echo '<p>' . $message . '</p>';
     echo '</section>';
 

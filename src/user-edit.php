@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/widgets/header.php';
+require_once 'includes/common.php';
 
 requireAdmin();
 
@@ -11,5 +11,7 @@ if ($f->validate()) {
 
     redirect('users.php');
 }
+
+require_once 'includes/widgets/header.php';
 
 $tpl->displayForm($f);
