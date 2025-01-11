@@ -4,6 +4,9 @@ require_once 'includes/common.php';
 
 use libAllure\Session;
 
+global $tpl;
+global $cfg;
+
 $tpl->assign('isLoggedIn', Session::isLoggedIn());
 $tpl->assign('countApprovals', 0);
 $tpl->assign('hasApprovalPermissions', false);
