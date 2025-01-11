@@ -11,3 +11,7 @@
 
 - `ENABLE_VOTING`: Enable voting feature, set to "1" to enable voting. (default: 0).
 - `ENABLE_SYNTAX_HIGHLIGHTING`: Enable the ability to set a code style for syntax highlighting (admin only).
+
+## Guest settings
+
+- `GUESTS_DISABLE_ADD`: Set to "true" to disable guests from adding new quotes (default: unset - guests can submit quotes).
