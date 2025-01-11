@@ -62,4 +62,5 @@ nav:
       - Docker standalone: installation/docker.md
       - Run database migrations: installation/migrations.md
   - Configuration: configuration/index.md
+  - "Security": security/index.md
   - "Contact & Support": contact-support.md
