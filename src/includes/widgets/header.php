@@ -12,7 +12,7 @@ if (Session::isLoggedIn()) {
     $tpl->assign('username', Session::getUser()->getUsername());
 
     if (Session::getUser()->hasPriv('APPROVE_QUOTES')) {
-        $tpl->assign('hasApprovalPermissions', getCountApprovals());
+        $tpl->assign('hasApprovalPermissions', true);
         $tpl->assign('countApprovals', getCountApprovals());
     }
 }
