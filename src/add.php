@@ -2,6 +2,10 @@
 
 require_once 'includes/widgets/header.php';
 
+if (!isAddEnabled()) {
+    simpleFatalError('Adding quotes is not available. Are you logged in?');
+}
+
 $f = new faridoon\FormQuote();
 
 if ($f->validate()) {

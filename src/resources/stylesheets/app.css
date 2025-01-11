@@ -38,13 +38,13 @@ section *:last-child {
   flex-grow: 1;
 }
 
-.quoteContainer ul {
+ul.section-links {
   padding: 0;
   margin: 0;
   display: inline-block;
 }
 
-.quoteContainer ul li {
+ul.section-links li {
   list-style-type: none;
   display: inline;
 }
@@ -160,22 +160,22 @@ div.voteContainer button:hover {
   background-color: transparent;
 }
 
-div.quoteHeader {
+div.section-header {
   display: flex;
   gap: .5em;
 }
 
-div.quoteHeader .adminLinks {
+div.section-header .section-links {
   flex-grow: 2;
   text-align: end;
 }
 
-div.quoteHeader ul.adminLinks a .svg-icon {
+div.section-header ul.section-links a .svg-icon {
   padding: .2em;
   border-radius: 2em;
 }
 
-div.quoteHeader ul.adminLinks a:hover .svg-icon {
+a:hover .svg-icon {
   background-color: #5f1a99;
 }
 

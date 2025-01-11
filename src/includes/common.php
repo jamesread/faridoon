@@ -33,9 +33,11 @@ DatabaseFactory::registerInstance($db);
 
 require_once 'includes/startup.php';
 
-requireDatabaseVersion('1.groups.sql');
+requireDatabaseVersion('2.permissions.sql');
 
 require_once 'includes/functionality.php';
+
+\libAllure\Sanitizer::getInstance()->enableSearchingPrefixKeys();
 
 use libAllure\AuthBackend;
 use libAllure\AuthBackendDatabase;

@@ -8,12 +8,11 @@
 	{/if}
 
 	<div class = "quoteContainer">
-		<div class = "quoteHeader">
+		<div class = "section-header">
 			<strong><a href = "show.php?action=show&amp;id={$quote->id}">#{$quote->id}</a></strong>
 
-
-			{if isAdmin()}
-			<ul class = "adminLinks">
+			{if $hasApprovalPermissions}
+			<ul class = "section-links">
 				{if !$quote->approved}
 				<li>
 					<a href = "approvals.php?approveId={$quote->id}" title = "Approve quote">

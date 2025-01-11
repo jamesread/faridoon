@@ -16,7 +16,9 @@
 			</li>
 			<li><a href = "users.php">Users</a></li>
 		{/if}
+		{if $isAddEnabled}
 		<li><a href = "add.php">Add quote</a></li>
+		{/if}
 		<li><a href = "logout.php">Log out</a></li>
 	</ul>
 

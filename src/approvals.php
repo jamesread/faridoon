@@ -2,7 +2,7 @@
 
 require_once 'includes/widgets/header.php';
 
-requireAdmin();
+requirePriv('APPROVE_QUOTES', 'You do not have permission to approve quotes');
 
 $approveId = filter('approveId');
 

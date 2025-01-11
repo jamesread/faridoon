@@ -7,6 +7,7 @@ use libAllure\ElementInput;
 use libAllure\ElementTextbox;
 use libAllure\ElementCheckbox;
 use libAllure\ElementSelect;
+use libAllure\Session;
 
 class FormQuote extends Form
 {
@@ -104,9 +105,16 @@ class FormQuote extends Form
     {
         global $db;
 
-        $sql = 'INSERT INTO quotes (content, created) VALUES (:content, now()) ';
+        $sql = 'INSERT INTO quotes (content, created, approval) VALUES (:content, now(), :approval) ';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':content', $content);
+
+        if (Session::isLoggedIn()) {
+            $stmt->bindValue(':approval', Session::getUser()->hasPriv('BYPASS_APPROVAL') ? 1 : 0);
+        } else {
+            $stmt->bindValue(':approval', 0);
+        }
+
         $stmt->execute();
     }
 }

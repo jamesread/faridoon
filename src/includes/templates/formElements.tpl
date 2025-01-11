@@ -4,8 +4,6 @@
 	{else}
 		{if $element->getType() eq 'ElementHidden'}
 			<input type = "hidden" name = "{$element->getName()}" value = "{$element->getValue()}" />
-		{elseif $element->getType() eq 'ElementHtml'}
-			{$element->getValue()}
 		{elseif $element->getType() eq 'ElementButton'}
 			<button value = "{$form->getName()}" name = "{$element->getName()}" type = "submit">{$element->getCaption()}</button>
 		{else}

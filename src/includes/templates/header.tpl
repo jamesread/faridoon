@@ -39,7 +39,7 @@
                 {if $isLoggedIn}
                     <li><a href = "account.php"><strong>{$username}</strong></a></li>
 
-					{if $isAdmin}
+					{if $hasApprovalPermissions}
 						<li>
 							<a href = "approvals.php">
 								Approvals	({$countApprovals})
@@ -52,7 +52,9 @@
 					{/if}
                 {/if}
 
+				{if $isAddEnabled}
                 <li class = "right"><a href = "add.php">Add</a></li>
+				{/if}
             </ul>
         </nav>
 

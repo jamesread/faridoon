@@ -123,3 +123,43 @@ function requireAdmin()
         exit;
     }
 }
+
+function simpleFatalError($message)
+{
+    echo '<section class = "severe">';
+    echo '<h2>Permission Denied</h2>';
+    echo '<p>' . $message . '</p>';
+    echo '</section>';
+
+    include_once 'includes/widgets/footer.php';
+
+    exit;
+}
+
+function redirect($url)
+{
+    header('Location: ' . $url);
+    exit;
+}
+
+function isAddEnabled()
+{
+    global $cfg;
+
+    if (!Session::isLoggedIn()) {
+        if ($cfg->getBool('GUESTS_DISABLE_ADD')) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        return true;
+    }
+}
+
+function requirePriv($priv, $message)
+{
+    if (!Session::getUser()->hasPriv($priv)) {
+        simpleFatalError($message);
+    }
+}
