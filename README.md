@@ -4,7 +4,7 @@
 
   Easily save and publish your favourite chat quotes for others to see.
 
-[![Static Badge](https://img.shields.io/badge/maturity-stable-brightgreen)](#none)
+[![Static Badge](https://img.shields.io/badge/maturity-Production-brightgreen)](#none)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jamesread/Faridoon/build-tag.yml?link=https%3A%2F%2Fgithub.com%2Fjamesread%2Ffaridoon%2Factions%2Fworkflows%2Fbuild-tag.yml)
 [![Discord](https://img.shields.io/discord/846737624960860180?label=Discord%20Server)](https://discord.gg/jhYWWpNJ3v)
 
