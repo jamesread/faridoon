@@ -4,7 +4,9 @@
 
   Easily save and publish your favourite chat quotes for others to see.
 
-[![Build Tag](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml/badge.svg)](https://github.com/jamesread/faridoon/actions/workflows/build-tag.yml) [![Discord](https://img.shields.io/discord/846737624960860180?label=Discord%20Server)](https://discord.gg/jhYWWpNJ3v)
+[![Static Badge](https://img.shields.io/badge/maturity-stable-brightgreen)](#none)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jamesread/Faridoon/build-tag.yml?link=https%3A%2F%2Fgithub.com%2Fjamesread%2Ffaridoon%2Factions%2Fworkflows%2Fbuild-tag.yml)
+[![Discord](https://img.shields.io/discord/846737624960860180?label=Discord%20Server)](https://discord.gg/jhYWWpNJ3v)
 
 Documentation for how to install and use Faridoon is available at https://jamesread.github.io/Faridoon/
 
