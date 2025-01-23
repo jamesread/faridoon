@@ -1,5 +1,5 @@
 <div align = "center">
-  <img alt = "project logo" src = "faridoon.png" />
+  <img alt = "project logo" src = "logo.png" />
   <h1>Faridoon</h1>
 
   Easily save and publish your favourite chat quotes for others to see.
