@@ -237,6 +237,10 @@ ul.block-links a:hover {
   color: white;
 }
 
+#developer-links a {
+  color: yellow;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #333;

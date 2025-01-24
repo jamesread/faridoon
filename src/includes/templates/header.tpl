@@ -21,7 +21,7 @@
 
 <body>
     <header>
-		<img src = "resources/svg/faridoon.svg" title = "logo" class = "logo" />
+		<img src = "resources/svg/faridoon.svg" onclick = "javascript:clickLogo()" title = "logo" class = "logo" />
 
 		<h1>
 			<a href = "index.php">{$siteTitle}</a>
@@ -56,6 +56,10 @@
                 <li class = "right"><a href = "add.php">Add</a></li>
 				{/if}
             </ul>
+			<ul class = "navigation" id = "developer-links" hidden>
+				<li><a href = "#" onclick = "toggleFullscreen()">Fullscreen</a></li>
+				<li><a href = "#" onclick = "document.getElementById('developer-links').hidden=true">&#10006;</a></li>
+			</ul>
         </nav>
 
 		<button id = "navigation-toggle" aria-label = "Open Sidebar Navigation" title = "Open Sidebar Navigation" aria-pressed = "false" aria-haspopup = "menu">&#9776;</button>

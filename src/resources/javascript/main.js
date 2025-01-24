@@ -1,3 +1,23 @@
+function toggleFullscreen () {
+  if (document.fullscreenElement) {
+    document.exitFullscreen()
+  } else {
+    document.documentElement.requestFullscreen()
+  }
+}
+
+window.logoClicks = 0
+
+function clickLogo () {
+  window.logoClicks++
+  if (window.logoClicks >= 5) {
+    document.getElementById('developer-links').hidden = false
+
+    window.alert('You found the hidden developer links!')
+
+  }
+}
+
 function voteUp (id) {
   return vote(id, 'up')
 }
