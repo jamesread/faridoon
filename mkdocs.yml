@@ -39,6 +39,7 @@ theme:
 
 plugins:
   - search:
+  - social:
   - minify:
       minify_html: true
   - tags:
