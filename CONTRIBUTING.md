@@ -1,4 +1,4 @@
-= Contributions
+# Contributions
 
 Contributions are very welcome - code, docs, whatever they might be! If this is
 your first contribution to an Open Source project or you're a core maintainer
@@ -11,15 +11,15 @@ Ideas may be discussed, purely on their merits and issues. Our Code of Conduct
 discussion throughout the whole process. This project respects the
 link:https://www.kernel.org/doc/html/latest/process/code-of-conduct.html[Linux Kernel code of conduct].
 
-== More than 3 lines - talk to someone first
+## More than 3 lines - talk to someone first
 
 If you're planning on making a change that's more than a 3 lines, please talk to someone first. This is so that you don't waste your time on something that might not be accepted. It's also a good way to get some feedback on your idea and make sure you're on the right track.
 
-== A PR should be one logical change
+## A PR should be one logical change
 
 Please try to keep your pull requests small and focused. It's almost impossible to review PRs that change lots of files for lots of different reasons. If you have a big change, it's probably best to break it down into smaller, more manageable chunks, otherwise it's likely to be rejected.
 
-== If you're not sure, ask!
+## If you're not sure, ask!
 
 Don't be afraid to ask for advice before working on a
 contribution. If you're thinking about a bigger change, especially that might
@@ -30,6 +30,6 @@ the general direction and roadmap of this project without asking.
 
 The preferred way to communicate is probably via GitHub issues.
 
-== Mechanics of submitting a pull request
+## Mechanics of submitting a pull request
 
 When you are ready for a PR, please see the link:.github/PULL_REQUEST_TEMPLATE.md[pull request template].
